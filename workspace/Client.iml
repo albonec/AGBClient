@@ -83,8 +83,9 @@
       <excludeFolder url="file://$MODULE_DIR$/conf" />
       <excludeFolder url="file://$MODULE_DIR$/runtime" />
       <excludeFolder url="file://$MODULE_DIR$/unused" />
+      <excludeFolder url="file://$MODULE_DIR$/META-INF" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="oshi-core-1.1.jar">
