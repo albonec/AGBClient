@@ -263,7 +263,7 @@ public abstract class GuiScreen extends Gui implements GuiYesNoCallback
     }
 
     /**
-     * Draws the hover event specified by the given chat component
+     * Draws the hover com.albonec.othercode.event specified by the given chat component
      *  
      * @param component The IChatComponent to render
      * @param x The x position where to render
@@ -377,7 +377,7 @@ public abstract class GuiScreen extends Gui implements GuiYesNoCallback
     }
 
     /**
-     * Executes the click event specified by the given chat component
+     * Executes the click com.albonec.othercode.event specified by the given chat component
      *  
      * @param component The ChatComponent to check for click
      */

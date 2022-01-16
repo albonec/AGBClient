@@ -537,7 +537,7 @@ public class GuiScreenBook extends GuiScreen
     }
 
     /**
-     * Executes the click event specified by the given chat component
+     * Executes the click com.albonec.othercode.event specified by the given chat component
      *  
      * @param component The ChatComponent to check for click
      */

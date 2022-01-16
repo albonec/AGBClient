@@ -118,7 +118,7 @@ public class SoundHandler implements IResourceManagerReloadListener, ITickable
         {
             if (!flag)
             {
-                logger.debug("Replaced sound event location {}", new Object[] {location});
+                logger.debug("Replaced sound com.albonec.othercode.event location {}", new Object[] {location});
             }
 
             soundeventaccessorcomposite = new SoundEventAccessorComposite(location, 1.0D, 1.0D, sounds.getSoundCategory());
@@ -144,12 +144,12 @@ public class SoundHandler implements IResourceManagerReloadListener, ITickable
                     }
                     catch (FileNotFoundException var18)
                     {
-                        logger.warn("File {} does not exist, cannot add it to event {}", new Object[] {resourcelocation1, location});
+                        logger.warn("File {} does not exist, cannot add it to com.albonec.othercode.event {}", new Object[] {resourcelocation1, location});
                         continue;
                     }
                     catch (IOException ioexception)
                     {
-                        logger.warn((String)("Could not load sound file " + resourcelocation1 + ", cannot add it to event " + location), (Throwable)ioexception);
+                        logger.warn((String)("Could not load sound file " + resourcelocation1 + ", cannot add it to com.albonec.othercode.event " + location), (Throwable)ioexception);
                         continue;
                     }
                     finally

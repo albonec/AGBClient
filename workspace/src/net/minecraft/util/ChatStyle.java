@@ -180,7 +180,7 @@ public class ChatStyle
     }
 
     /**
-     * The effective chat click event.
+     * The effective chat click com.albonec.othercode.event.
      */
     public ClickEvent getChatClickEvent()
     {
@@ -188,7 +188,7 @@ public class ChatStyle
     }
 
     /**
-     * The effective chat hover event.
+     * The effective chat hover com.albonec.othercode.event.
      */
     public HoverEvent getChatHoverEvent()
     {
@@ -264,7 +264,7 @@ public class ChatStyle
     }
 
     /**
-     * Sets the event that should be run when text of this ChatStyle is clicked on.
+     * Sets the com.albonec.othercode.event that should be run when text of this ChatStyle is clicked on.
      */
     public ChatStyle setChatClickEvent(ClickEvent event)
     {
@@ -273,7 +273,7 @@ public class ChatStyle
     }
 
     /**
-     * Sets the event that should be run when text of this ChatStyle is hovered over.
+     * Sets the com.albonec.othercode.event that should be run when text of this ChatStyle is hovered over.
      */
     public ChatStyle setChatHoverEvent(HoverEvent event)
     {

@@ -1945,7 +1945,7 @@
     "category": "music",
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "music.game"
       },
       {

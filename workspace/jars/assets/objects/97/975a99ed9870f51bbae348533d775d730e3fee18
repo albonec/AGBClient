@@ -2607,7 +2607,7 @@
   "entity.parrot.imitate.blaze": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.blaze.ambient",
         "volume": 0.4,
         "pitch": 1.8
@@ -2618,7 +2618,7 @@
   "entity.parrot.imitate.creeper": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.creeper.primed",
         "volume": 0.6,
         "pitch": 1.8
@@ -2629,7 +2629,7 @@
   "entity.parrot.imitate.elder_guardian": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.elder_guardian.ambient_land",
         "volume": 0.7,
         "pitch": 1.8
@@ -2640,7 +2640,7 @@
   "entity.parrot.imitate.enderdragon": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.enderdragon.ambient",
         "volume": 0.2,
         "pitch": 1.8
@@ -2651,7 +2651,7 @@
   "entity.parrot.imitate.enderman": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.endermen.ambient",
         "volume": 0.5,
         "pitch": 1.7
@@ -2662,7 +2662,7 @@
   "entity.parrot.imitate.endermite": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.endermite.ambient",
         "volume": 0.7,
         "pitch": 1.8
@@ -2673,7 +2673,7 @@
   "entity.parrot.imitate.evocation_illager": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.evocation_illager.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -2684,7 +2684,7 @@
   "entity.parrot.imitate.ghast": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.ghast.ambient",
         "volume": 0.7,
         "pitch": 1.8
@@ -2695,7 +2695,7 @@
   "entity.parrot.imitate.husk": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.husk.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -2706,7 +2706,7 @@
   "entity.parrot.imitate.illusion_illager": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.illusion_illager.ambient",
         "volume": 0.7,
         "pitch": 1.8
@@ -2717,7 +2717,7 @@
   "entity.parrot.imitate.magmacube": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.magmacube.squish",
         "volume": 0.6,
         "pitch": 1.8
@@ -2728,7 +2728,7 @@
   "entity.parrot.imitate.polar_bear": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.polar_bear.ambient",
         "volume": 0.7,
         "pitch": 0.8
@@ -2739,7 +2739,7 @@
   "entity.parrot.imitate.shulker": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.shulker.ambient",
         "volume": 0.4,
         "pitch": 1.7
@@ -2750,7 +2750,7 @@
   "entity.parrot.imitate.silverfish": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.silverfish.ambient",
         "volume": 0.7,
         "pitch": 1.8
@@ -2761,7 +2761,7 @@
   "entity.parrot.imitate.skeleton": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.skeleton.ambient",
         "volume": 1,
         "pitch": 1.7
@@ -2772,7 +2772,7 @@
   "entity.parrot.imitate.slime": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.slime.squish",
         "volume": 0.6,
         "pitch": 1.8
@@ -2783,7 +2783,7 @@
   "entity.parrot.imitate.spider": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.spider.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -2794,7 +2794,7 @@
   "entity.parrot.imitate.stray": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.stray.ambient",
         "volume": 0.6,
         "pitch": 1.6
@@ -2805,7 +2805,7 @@
   "entity.parrot.imitate.vex": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.vex.ambient",
         "volume": 0.8,
         "pitch": 1.6
@@ -2816,7 +2816,7 @@
   "entity.parrot.imitate.vindication_illager": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.vindication_illager.ambient",
         "volume": 0.6,
         "pitch": 1.7
@@ -2827,7 +2827,7 @@
   "entity.parrot.imitate.witch": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.witch.ambient",
         "volume": 0.5,
         "pitch": 1.8
@@ -2838,7 +2838,7 @@
   "entity.parrot.imitate.wither": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.wither.ambient",
         "volume": 0.2,
         "pitch": 1.8
@@ -2849,7 +2849,7 @@
   "entity.parrot.imitate.wither_skeleton": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.wither_skeleton.ambient",
         "volume": 0.7,
         "pitch": 1.8
@@ -2860,7 +2860,7 @@
   "entity.parrot.imitate.wolf": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.wolf.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -2871,7 +2871,7 @@
   "entity.parrot.imitate.zombie": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.zombie.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -2882,7 +2882,7 @@
   "entity.parrot.imitate.zombie_pigman": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.zombie_pig.ambient",
         "volume": 0.4,
         "pitch": 1.8
@@ -2893,7 +2893,7 @@
   "entity.parrot.imitate.zombie_villager": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "entity.zombie_villager.ambient",
         "volume": 0.6,
         "pitch": 1.8
@@ -4436,7 +4436,7 @@
   "music.creative": {
     "sounds": [
       {
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "name": "music.game"
       },
       {

@@ -107,7 +107,7 @@ public class WorldClient extends World
     }
 
     /**
-     * Invalidates an AABB region of blocks from the receive queue, in the event that the block has been modified
+     * Invalidates an AABB region of blocks from the receive queue, in the com.albonec.othercode.event that the block has been modified
      * client-side in the intervening 80 receive ticks.
      *  
      * @param x1 X position of the block where the region begin

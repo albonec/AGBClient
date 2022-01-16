@@ -16,7 +16,7 @@ public class HoverEvent
     }
 
     /**
-     * Gets the action to perform when this event is raised.
+     * Gets the action to perform when this com.albonec.othercode.event is raised.
      */
     public HoverEvent.Action getAction()
     {
@@ -24,7 +24,7 @@ public class HoverEvent
     }
 
     /**
-     * Gets the value to perform the action on when this event is raised.  For example, if the action is "show item",
+     * Gets the value to perform the action on when this com.albonec.othercode.event is raised.  For example, if the action is "show item",
      * this would be the item to show.
      */
     public IChatComponent getValue()

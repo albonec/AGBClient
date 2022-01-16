@@ -1223,7 +1223,7 @@
     "entity.minecraft.zombie": "Zombie",
     "entity.minecraft.zombie_horse": "Huaka\u02bbi p\u014d lio",
     "entity.minecraft.zombified_piglin": "Pikalina i Ho\u02bbomake \u02bbia",
-    "event.minecraft.raid.raiders_remaining": "Ke koena o n\u0101 Raiders:%s",
+    "com.albonec.othercode.event.minecraft.raid.raiders_remaining": "Ke koena o n\u0101 Raiders:%s",
     "gameMode.adventure": "Hana ho\u02bbop\u012bhoihoi \u02bbano",
     "gameMode.changed": "Ko oukou p\u0101\u02bbani \u02bbano ua h\u014d\u02bbano ai i %s",
     "gameMode.creative": "No\u02bbono\u02bbo \u02bbano",

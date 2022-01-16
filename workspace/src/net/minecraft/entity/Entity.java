@@ -141,7 +141,7 @@ public abstract class Entity implements ICommandSender
     public float fallDistance;
 
     /**
-     * The distance that has to be exceeded in order to triger a new step sound and an onEntityWalking event on a block
+     * The distance that has to be exceeded in order to triger a new step sound and an onEntityWalking com.albonec.othercode.event on a block
      */
     private int nextStepDistance;
 

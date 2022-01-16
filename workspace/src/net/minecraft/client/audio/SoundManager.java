@@ -389,7 +389,7 @@ public class SoundManager
                                 this.sndSystem.newSource(false, s, getURLForSoundResource(resourcelocation), resourcelocation.toString(), flag, p_sound.getXPosF(), p_sound.getYPosF(), p_sound.getZPosF(), p_sound.getAttenuationType().getTypeInt(), f1);
                             }
 
-                            logger.debug(LOG_MARKER, "Playing sound {} for event {} as channel {}", new Object[] {soundpoolentry.getSoundPoolEntryLocation(), soundeventaccessorcomposite.getSoundEventLocation(), s});
+                            logger.debug(LOG_MARKER, "Playing sound {} for com.albonec.othercode.event {} as channel {}", new Object[] {soundpoolentry.getSoundPoolEntryLocation(), soundeventaccessorcomposite.getSoundEventLocation(), s});
                             this.sndSystem.setPitch(s, (float)d0);
                             this.sndSystem.setVolume(s, f2);
                             this.sndSystem.play(s);

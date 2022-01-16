@@ -3647,8 +3647,8 @@ public abstract class World implements IBlockAccess
         }
         catch (Throwable throwable)
         {
-            CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Playing level event");
-            CrashReportCategory crashreportcategory = crashreport.makeCategory("Level event being played");
+            CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Playing level com.albonec.othercode.event");
+            CrashReportCategory crashreportcategory = crashreport.makeCategory("Level com.albonec.othercode.event being played");
             crashreportcategory.addCrashSection("Block coordinates", CrashReportCategory.getCoordinateInfo(pos));
             crashreportcategory.addCrashSection("Event source", player);
             crashreportcategory.addCrashSection("Event type", Integer.valueOf(sfxType));

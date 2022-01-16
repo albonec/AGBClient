@@ -1792,7 +1792,7 @@
     "entity.minecraft.zombie_horse": "Zombiegaul",
     "entity.minecraft.zombie_villager": "Zombiedoefbewohne",
     "entity.minecraft.zombified_piglin": "Zombifiziada Piglin",
-    "event.minecraft.raid.raiders_remaining": "Veableibende R\u00e4uba: %s",
+    "com.albonec.othercode.event.minecraft.raid.raiders_remaining": "Veableibende R\u00e4uba: %s",
     "gameMode.adventure": "Abendeuamoddus",
     "gameMode.changed": "Dei Schbielmoddus wurd zu %s ge\u00e4nd\u00e4dd",
     "gameMode.creative": "Greadivmoddus",

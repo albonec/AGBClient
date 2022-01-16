@@ -2462,7 +2462,7 @@
     "sounds": [
       {
         "name": "block.sweet_berry_bush.pick_berries",
-        "type": "event"
+        "type": "com.albonec.othercode.event"
       }
     ],
     "subtitle": "subtitles.block.sweet_berry_bush.pick_berries"
@@ -10690,7 +10690,7 @@
       {
         "name": "entity.blaze.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.4
       }
     ],
@@ -10701,7 +10701,7 @@
       {
         "name": "entity.creeper.primed",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10712,7 +10712,7 @@
       {
         "name": "entity.drowned.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10723,7 +10723,7 @@
       {
         "name": "entity.elder_guardian.ambient_land",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -10734,7 +10734,7 @@
       {
         "name": "entity.ender_dragon.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.2
       }
     ],
@@ -10745,7 +10745,7 @@
       {
         "name": "entity.endermite.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -10756,7 +10756,7 @@
       {
         "name": "entity.evoker.cast_spell",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10767,7 +10767,7 @@
       {
         "name": "entity.ghast.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -10778,7 +10778,7 @@
       {
         "name": "entity.guardian.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.4
       }
     ],
@@ -10789,7 +10789,7 @@
       {
         "name": "entity.hoglin.ambient",
         "pitch": 1.9,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10800,7 +10800,7 @@
       {
         "name": "entity.husk.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10811,7 +10811,7 @@
       {
         "name": "entity.illusioner.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -10822,7 +10822,7 @@
       {
         "name": "entity.magma_cube.squish",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10833,7 +10833,7 @@
       {
         "name": "entity.phantom.ambient",
         "pitch": 1.7,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10844,7 +10844,7 @@
       {
         "name": "entity.piglin.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10855,7 +10855,7 @@
       {
         "name": "entity.piglin_brute.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10866,7 +10866,7 @@
       {
         "name": "entity.pillager.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.4
       }
     ],
@@ -10877,7 +10877,7 @@
       {
         "name": "entity.ravager.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.2
       }
     ],
@@ -10888,7 +10888,7 @@
       {
         "name": "entity.shulker.ambient",
         "pitch": 1.7,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.4
       }
     ],
@@ -10899,7 +10899,7 @@
       {
         "name": "entity.silverfish.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -10910,7 +10910,7 @@
       {
         "name": "entity.skeleton.ambient",
         "pitch": 1.7,
-        "type": "event"
+        "type": "com.albonec.othercode.event"
       }
     ],
     "subtitle": "subtitles.entity.parrot.imitate.skeleton"
@@ -10920,7 +10920,7 @@
       {
         "name": "entity.slime.squish",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10931,7 +10931,7 @@
       {
         "name": "entity.spider.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10942,7 +10942,7 @@
       {
         "name": "entity.stray.ambient",
         "pitch": 1.6,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10953,7 +10953,7 @@
       {
         "name": "entity.vex.ambient",
         "pitch": 1.6,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.8
       }
     ],
@@ -10964,7 +10964,7 @@
       {
         "name": "entity.vindicator.ambient",
         "pitch": 1.7,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -10975,7 +10975,7 @@
       {
         "name": "entity.witch.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.5
       }
     ],
@@ -10986,7 +10986,7 @@
       {
         "name": "entity.wither.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.2
       }
     ],
@@ -10997,7 +10997,7 @@
       {
         "name": "entity.wither_skeleton.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.7
       }
     ],
@@ -11008,7 +11008,7 @@
       {
         "name": "entity.zoglin.ambient",
         "pitch": 1.9,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -11019,7 +11019,7 @@
       {
         "name": "entity.zombie.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -11030,7 +11030,7 @@
       {
         "name": "entity.zombie_villager.ambient",
         "pitch": 1.8,
-        "type": "event",
+        "type": "com.albonec.othercode.event",
         "volume": 0.6
       }
     ],
@@ -13927,26 +13927,26 @@
     ],
     "subtitle": "subtitles.entity.zombified_piglin.hurt"
   },
-  "event.raid.horn": {
+  "com.albonec.othercode.event.raid.horn": {
     "sounds": [
       {
-        "name": "event/raid/raidhorn_01",
+        "name": "com.albonec.othercode.event/raid/raidhorn_01",
         "volume": 0.01
       },
       {
-        "name": "event/raid/raidhorn_02",
+        "name": "com.albonec.othercode.event/raid/raidhorn_02",
         "volume": 0.01
       },
       {
-        "name": "event/raid/raidhorn_03",
+        "name": "com.albonec.othercode.event/raid/raidhorn_03",
         "volume": 0.01
       },
       {
-        "name": "event/raid/raidhorn_04",
+        "name": "com.albonec.othercode.event/raid/raidhorn_04",
         "volume": 0.01
       }
     ],
-    "subtitle": "subtitles.event.raid.horn"
+    "subtitle": "subtitles.com.albonec.othercode.event.raid.horn"
   },
   "item.armor.equip_chain": {
     "sounds": [
@@ -15209,7 +15209,7 @@
     "sounds": [
       {
         "name": "music.game",
-        "type": "event"
+        "type": "com.albonec.othercode.event"
       },
       {
         "name": "music/game/creative/creative1",
