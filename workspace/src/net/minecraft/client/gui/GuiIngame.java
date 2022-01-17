@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import com.albonec.othercode.event.events.Event2D;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -169,6 +170,10 @@ public class GuiIngame extends Gui
         {
             this.renderTooltip(scaledresolution, partialTicks);
         }
+
+        Event2D event2D = new Event2D(scaledresolution.getScaledWidth(), scaledresolution.getScaledHeight());
+        event2D.call();
+
 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(icons);

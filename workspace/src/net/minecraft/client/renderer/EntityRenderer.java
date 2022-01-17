@@ -1,5 +1,6 @@
 package net.minecraft.client.renderer;
 
+import com.albonec.othercode.event.events.Event3D;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.gson.JsonSyntaxException;
@@ -1895,6 +1896,9 @@ public class EntityRenderer implements IResourceManagerReloadListener
             this.mc.mcProfiler.endStartSection("forge_render_last");
             Reflector.callVoid(Reflector.ForgeHooksClient_dispatchRenderLast, new Object[] {renderglobal, Float.valueOf(partialTicks)});
         }
+
+        Event3D event3D = new Event3D(partialTicks);
+        event3D.call();
 
         this.mc.mcProfiler.endStartSection("hand");
 

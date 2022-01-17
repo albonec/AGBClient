@@ -14,7 +14,12 @@ public class start {
         eventManager = new EventManager();
 
         System.out.println(ClientName);
-
         Display.setTitle(ClientName);
+
+        eventManager.register(this);
+    }
+
+    public void stop() {
+        eventManager.unregister(this);
     }
 }

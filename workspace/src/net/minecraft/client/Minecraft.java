@@ -1,5 +1,6 @@
 package net.minecraft.client;
 
+import com.albonec.othercode.event.events.EventKey;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -1053,6 +1054,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     {
         try
         {
+            start.instance.stop();
+
             this.stream.shutdownStream();
             logger.info("Stopping!");
 
@@ -1946,6 +1949,10 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     }
                     else
                     {
+
+                        EventKey eventKey = new EventKey(k);
+                        eventKey.call();
+
                         if (k == 1)
                         {
                             this.displayInGameMenu();

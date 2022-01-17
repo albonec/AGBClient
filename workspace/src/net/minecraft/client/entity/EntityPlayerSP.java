@@ -1,5 +1,8 @@
 package net.minecraft.client.entity;
 
+import com.albonec.othercode.event.events.EventPostMotionUpdate;
+import com.albonec.othercode.event.events.EventPreMotionUpdate;
+import com.albonec.othercode.event.events.EventUpdate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -169,6 +172,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
+            EventUpdate eventUpdate = new EventUpdate();
+            eventUpdate.call();
+
             super.onUpdate();
 
             if (this.isRiding())
@@ -179,6 +185,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
             else
             {
                 this.onUpdateWalkingPlayer();
+
+                EventPostMotionUpdate eventPostMotionUpdate = new EventPostMotionUpdate();
+                eventPostMotionUpdate.call();
             }
         }
     }
@@ -188,6 +197,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
+        EventPreMotionUpdate eventPreMotionUpdate  = new EventPreMotionUpdate(this.rotationPitch, this.rotationYaw, this.onGround, this.posX, this.posY, this.posZ);
+        eventPreMotionUpdate.call();
+
         boolean flag = this.isSprinting();
 
         if (flag != this.serverSprintState)
