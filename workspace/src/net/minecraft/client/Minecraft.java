@@ -1,6 +1,7 @@
 package net.minecraft.client;
 
 import com.albonec.othercode.event.events.EventKey;
+import com.albonec.othercode.ui.CustomIngameGui;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -569,7 +570,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         GlStateManager.viewport(0, 0, this.displayWidth, this.displayHeight);
         this.effectRenderer = new EffectRenderer(this.theWorld, this.renderEngine);
         this.checkGLError("Post startup");
-        this.ingameGUI = new GuiIngame(this);
+        this.ingameGUI = new CustomIngameGui(this);
 
         if (this.serverName != null)
         {
