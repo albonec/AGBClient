@@ -4,7 +4,13 @@ import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
+import net.minecraft.client.gui.ScaledResolution;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.awt.*;
 
 public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
@@ -20,6 +26,7 @@ public class CustomIngameGui extends GuiIngame {
         if(!mc.gameSettings.showDebugProfilerChart) {
             renderInfo();
         }
+        renderKeyStrokes();
     }
 
     private void renderInfo() {
@@ -27,6 +34,31 @@ public class CustomIngameGui extends GuiIngame {
         fonts.drawString(ChatFormatting.RED +"X: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posX), 2, 30, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Y: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posY), 2, 40, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Z: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posZ), 2, 50, 0xffffff);
+    }
+
+    private void renderKeyStrokes() {
+        ScaledResolution sr = new ScaledResolution(mc);
+
+        int WAlpha = (Keyboard.isKeyDown(Keyboard.KEY_W) ? 125 : 50);
+        int AAlpha = (Keyboard.isKeyDown(Keyboard.KEY_A) ? 125 : 50);
+        int SAlpha = (Keyboard.isKeyDown(Keyboard.KEY_S) ? 125 : 50);
+        int DAlpha = (Keyboard.isKeyDown(Keyboard.KEY_D) ? 125 : 50);
+        int RMBAlpha = (Mouse.isButtonDown(1) ? 125 : 50);
+        int LMBAlpha = (Mouse.isButtonDown(0) ? 125 : 50);
+
+        Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 29 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 29 - 30, new Color(0,0,0,WAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29 - 29, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,AAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,SAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,DAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4 - 45, sr.getScaledHeight() - 4, new Color(0,0,0,LMBAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 4 - 40, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4, new Color(0,0,0,RMBAlpha).getRGB());
+
+        fonts.drawString("W", sr.getScaledWidth() - 48, sr.getScaledHeight() - 49 - 30, 0xffffff);
+        fonts.drawString("A", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20 - 30, 0xffffff);
+        fonts.drawString("S", sr.getScaledWidth() - 48, sr.getScaledHeight() - 20 - 30, 0xffffff);
+        fonts.drawString("D", sr.getScaledWidth() - 19, sr.getScaledHeight() - 20 - 30, 0xffffff);
+        fonts.drawString("RMB", sr.getScaledWidth() - 34, sr.getScaledHeight() - 20, 0xffffff);
+        fonts.drawString("LMB", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20, 0xffffff);
     }
 
 }
