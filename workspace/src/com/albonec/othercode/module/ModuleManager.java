@@ -1,5 +1,7 @@
 package com.albonec.othercode.module;
 
+import com.albonec.othercode.module.player.*;
+
 import java.util.ArrayList;
 
 public class ModuleManager {
@@ -13,6 +15,8 @@ public class ModuleManager {
         //RENDER
 
         //PLAYER
+        modules.add(new AntiBlind());
+
 
         //MISC
 

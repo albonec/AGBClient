@@ -1,5 +1,6 @@
 package com.albonec.othercode.ui;
 
+import com.albonec.othercode.module.ModuleManager;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
