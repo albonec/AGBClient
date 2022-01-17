@@ -1,5 +1,6 @@
 package com.albonec.othercode.ui;
 
+import com.albonec.othercode.module.Module;
 import com.albonec.othercode.module.ModuleManager;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -12,6 +13,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
@@ -26,6 +28,7 @@ public class CustomIngameGui extends GuiIngame {
         super.renderGameOverlay(partialTicks);
         if(!mc.gameSettings.showDebugProfilerChart) {
             renderInfo();
+            renderModules();
         }
         renderKeyStrokes();
     }
@@ -35,6 +38,26 @@ public class CustomIngameGui extends GuiIngame {
         fonts.drawString(ChatFormatting.RED +"X: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posX), 2, 30, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Y: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posY), 2, 40, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Z: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posZ), 2, 50, 0xffffff);
+
+        fonts.drawString("Enabled Modules", 2, 80, 0xffffff);
+    }
+
+    private void renderModules() {
+        ScaledResolution sr = new ScaledResolution(mc);
+
+        ArrayList<Module> enabledModules = new ArrayList<Module>();
+        for (Module m : start.instance.moduleManager.getModules())
+            if (m.isToggled())
+                enabledModules.add(m);
+
+        System.out.println(enabledModules);
+        enabledModules.sort((m1, m2) -> fonts.getStringWidth(m2.getDisplayName()) - fonts.getStringWidth(m1.getDisplayName()));
+
+        int y = 95;
+        for (Module m : enabledModules) {
+            fonts.drawString(ChatFormatting.AQUA + m.getDisplayName(), 2, y, 0xffffff);
+            y += 10;
+        }
     }
 
     private void renderKeyStrokes() {

@@ -1,6 +1,7 @@
 package com.albonec.othercode.module;
 
 import com.albonec.othercode.module.player.*;
+import com.albonec.othercode.module.render.Zoom;
 
 import java.util.ArrayList;
 
@@ -13,10 +14,10 @@ public class ModuleManager {
         //MOVEMENT
 
         //RENDER
+        modules.add(new Zoom());
 
         //PLAYER
         modules.add(new AntiBlind());
-
 
         //MISC
 
