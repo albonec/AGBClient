@@ -23,7 +23,7 @@ public class Zoom extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate event) {
-        mc.gameSettings.gammaSetting = 10F;
+        mc.gameSettings.gammaSetting = 2.5F;
     }
 
     @Override
