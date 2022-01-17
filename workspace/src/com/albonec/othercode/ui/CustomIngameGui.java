@@ -50,14 +50,14 @@ public class CustomIngameGui extends GuiIngame {
         Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29 - 29, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,AAlpha).getRGB());
         Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,SAlpha).getRGB());
         Gui.drawRect(sr.getScaledWidth() - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,DAlpha).getRGB());
-        Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4 - 45, sr.getScaledHeight() - 4, new Color(0,0,0,LMBAlpha).getRGB());
-        Gui.drawRect(sr.getScaledWidth() - 4 - 40, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4, new Color(0,0,0,RMBAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4 - 44, sr.getScaledHeight() - 4, new Color(0,0,0,LMBAlpha).getRGB());
+        Gui.drawRect(sr.getScaledWidth() - 4 - 39, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4, new Color(0,0,0,RMBAlpha).getRGB());
 
         fonts.drawString("W", sr.getScaledWidth() - 48, sr.getScaledHeight() - 49 - 30, 0xffffff);
         fonts.drawString("A", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20 - 30, 0xffffff);
         fonts.drawString("S", sr.getScaledWidth() - 48, sr.getScaledHeight() - 20 - 30, 0xffffff);
         fonts.drawString("D", sr.getScaledWidth() - 19, sr.getScaledHeight() - 20 - 30, 0xffffff);
-        fonts.drawString("RMB", sr.getScaledWidth() - 34, sr.getScaledHeight() - 20, 0xffffff);
+        fonts.drawString("RMB", sr.getScaledWidth() - 32, sr.getScaledHeight() - 20, 0xffffff);
         fonts.drawString("LMB", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20, 0xffffff);
     }
 
