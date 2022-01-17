@@ -37,12 +37,11 @@ public class CustomIngameGui extends GuiIngame {
         fonts.drawString(ChatFormatting.RED +"X: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posX), 2, 30, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Y: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posY), 2, 40, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Z: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posZ), 2, 50, 0xffffff);
-
-        fonts.drawString("Enabled Modules", 2, 80, 0xffffff);
     }
 
     private void renderModules() {
         ScaledResolution sr = new ScaledResolution(mc);
+        fonts.drawString("Enabled Modules", 2, 80, 0xffffff);
 
         ArrayList<Module> enabledModules = new ArrayList<Module>();
         for (Module m : start.instance.moduleManager.getModules())
