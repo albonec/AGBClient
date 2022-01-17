@@ -61,12 +61,12 @@ public class CustomIngameGui extends GuiIngame {
     private void renderKeyStrokes() {
         ScaledResolution sr = new ScaledResolution(mc);
 
-        int WAlpha = (Keyboard.isKeyDown(Keyboard.KEY_W) ? 125 : 50);
-        int AAlpha = (Keyboard.isKeyDown(Keyboard.KEY_A) ? 125 : 50);
-        int SAlpha = (Keyboard.isKeyDown(Keyboard.KEY_S) ? 125 : 50);
-        int DAlpha = (Keyboard.isKeyDown(Keyboard.KEY_D) ? 125 : 50);
-        int RMBAlpha = (Mouse.isButtonDown(1) ? 125 : 50);
-        int LMBAlpha = (Mouse.isButtonDown(0) ? 125 : 50);
+        int WAlpha = (Keyboard.isKeyDown(Keyboard.KEY_W) ? 250 : 50);
+        int AAlpha = (Keyboard.isKeyDown(Keyboard.KEY_A) ? 250 : 50);
+        int SAlpha = (Keyboard.isKeyDown(Keyboard.KEY_S) ? 250 : 50);
+        int DAlpha = (Keyboard.isKeyDown(Keyboard.KEY_D) ? 250 : 50);
+        int RMBAlpha = (Mouse.isButtonDown(1) ? 250 : 50);
+        int LMBAlpha = (Mouse.isButtonDown(0) ? 250 : 50);
 
         Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 29 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 29 - 30, new Color(0,0,0,WAlpha).getRGB());
         Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29 - 29, sr.getScaledHeight() - 4 - 30, new Color(0,0,0,AAlpha).getRGB());
