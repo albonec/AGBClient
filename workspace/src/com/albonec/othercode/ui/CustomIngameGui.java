@@ -2,12 +2,16 @@ package com.albonec.othercode.ui;
 
 import com.albonec.othercode.module.Module;
 import com.albonec.othercode.start;
+import com.mojang.realmsclient.dto.PlayerInfo;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.network.NetworkPlayerInfo;
+import net.optifine.util.MemoryMonitor;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
@@ -17,6 +21,7 @@ import java.util.ArrayList;
 public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
     private FontRenderer fonts = mc.fontRendererObj;
+    Runtime runtime = Runtime.getRuntime();
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -33,10 +38,18 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderInfo() {
+        ScaledResolution sr = new ScaledResolution(mc);
         fonts.drawString("Coordinates", 2, 20, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"X: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posX), 2, 30, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Y: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posY), 2, 40, 0xffffff);
         fonts.drawString(ChatFormatting.RED +"Z: " + ChatFormatting.WHITE + String.valueOf(mc.thePlayer.posZ), 2, 50, 0xffffff);
+        //fonts.drawString(ChatFormatting.BLUE +"Since Last Packet: "+ "ms", sr.getScaledWidth() - 140, 2, 0xffffff);
+        if((runtime.totalMemory() - runtime.freeMemory()) / 1000000 >= 1000) {
+            fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 95, 2, 0xffffff);
+        } else {
+            fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 90, 2, 0xffffff);
+        }
+
     }
 
     private void renderModules() {
