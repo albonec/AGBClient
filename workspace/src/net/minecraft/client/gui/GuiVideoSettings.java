@@ -209,7 +209,7 @@ public class GuiVideoSettings extends GuiScreenOF
 
         if (s1.equals("HD_U"))
         {
-            s = "OptiFine HD M5 Ultra";
+            s = "AGBClient";
         }
 
         if (s1.equals("L"))
@@ -218,7 +218,7 @@ public class GuiVideoSettings extends GuiScreenOF
         }
 
         this.drawString(this.fontRendererObj, s, 2, this.height - 10, 8421504);
-        String s2 = "Minecraft 1.8.9";
+        String s2 = "OptiFine HD U M5 Ultra";
         int i = this.fontRendererObj.getStringWidth(s2);
         this.drawString(this.fontRendererObj, s2, this.width - i - 2, this.height - 10, 8421504);
         super.drawScreen(mouseX, mouseY, partialTicks);

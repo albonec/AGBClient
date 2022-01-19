@@ -16,6 +16,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 import java.awt.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class CustomIngameGui extends GuiIngame {
@@ -31,20 +32,19 @@ public class CustomIngameGui extends GuiIngame {
     public void renderGameOverlay(float partialTicks) {
         super.renderGameOverlay(partialTicks);
         if(!mc.gameSettings.showDebugProfilerChart) {
-            renderInfo();
+            renderCoords();
             renderMemory();
             renderModules();
             renderKeyStrokes();
         }
     }
 
-    private void renderInfo() {
-        ScaledResolution sr = new ScaledResolution(mc);
+    private void renderCoords() {
+        DecimalFormat df = new DecimalFormat("0.0000");
         fonts.drawString("Coordinates", 2, 20, 0xffffff);
-        fonts.drawString(ChatFormatting.RED + "X: " + ChatFormatting.WHITE + String.valueOf(Math.round(mc.thePlayer.posX)), 2, 30, 0xffffff);
-        fonts.drawString(ChatFormatting.RED + "Y: " + ChatFormatting.WHITE + String.valueOf(Math.round(mc.thePlayer.posY)), 2, 40, 0xffffff);
-        fonts.drawString(ChatFormatting.RED + "Z: " + ChatFormatting.WHITE + String.valueOf(Math.round(mc.thePlayer.posZ)), 2, 50, 0xffffff);
-        //fonts.drawString(ChatFormatting.BLUE +"Since Last Packet: "+ "ms", sr.getScaledWidth() - 140, 2, 0xffffff);
+        fonts.drawString(ChatFormatting.RED + "X: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posX)), 2, 30, 0xffffff);
+        fonts.drawString(ChatFormatting.RED + "Y: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posY)), 2, 40, 0xffffff);
+        fonts.drawString(ChatFormatting.RED + "Z: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posZ)), 2, 50, 0xffffff);
 
     }
 
@@ -62,7 +62,6 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderModules() {
-        ScaledResolution sr = new ScaledResolution(mc);
         fonts.drawString("Enabled Features", 2, 80, 0xffffff);
 
         ArrayList<Module> enabledModules = new ArrayList<Module>();
