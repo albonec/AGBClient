@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import com.albonec.othercode.ui.FeaturesButton;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import java.io.BufferedReader;
@@ -227,6 +228,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
         else
         {
             this.addSingleplayerMultiplayerButtons(j, 24);
+            this.addFeaturesButton(j);
         }
 
         this.buttonList.add(new GuiButton(0, this.width / 2 - 100, j + 72 + 12, 98, 20, I18n.format("menu.options", new Object[0])));
@@ -266,17 +268,20 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
         this.buttonList.add(new GuiButton(1, this.width / 2 - 100, p_73969_1_, I18n.format("menu.singleplayer", new Object[0])));
-        this.buttonList.add(new GuiButton(2, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 1, I18n.format("menu.multiplayer", new Object[0])));
+        this.buttonList.add(new GuiButton(2, this.width / 2 - 100, p_73969_1_ + p_73969_2_, I18n.format("menu.multiplayer", new Object[0])));
 
         if (Reflector.GuiModList_Constructor.exists())
         {
-            this.buttonList.add(this.realmsButton = new GuiButton(14, this.width / 2 + 2, p_73969_1_ + p_73969_2_ * 2, 98, 20, I18n.format("menu.online", new Object[0]).replace("Minecraft", "").trim()));
             this.buttonList.add(this.modButton = new GuiButton(6, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, 98, 20, I18n.format("fml.menu.mods", new Object[0])));
         }
-        else
-        {
-            this.buttonList.add(this.realmsButton = new GuiButton(14, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, I18n.format("menu.online", new Object[0])));
-        }
+    }
+
+    /**
+     * Adds button for feature management
+     */
+
+    private void addFeaturesButton(int p_73969_1_) {
+        this.buttonList.add(new FeaturesButton(3, this.width / 2 - 100, p_73969_1_ + 48));
     }
 
     /**
