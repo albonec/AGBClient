@@ -1,6 +1,7 @@
 package net.minecraft.client.gui;
 
 import com.albonec.othercode.ui.FeaturesButton;
+import com.albonec.othercode.ui.GuiFeatures;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import java.io.BufferedReader;
@@ -323,6 +324,10 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
         if (button.id == 2)
         {
             this.mc.displayGuiScreen(new GuiMultiplayer(this));
+        }
+
+        if (button.id == 3) {
+            this.mc.displayGuiScreen(new GuiFeatures(this));
         }
 
         if (button.id == 14 && this.realmsButton.visible)
