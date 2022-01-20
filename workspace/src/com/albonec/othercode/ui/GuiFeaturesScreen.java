@@ -1,21 +1,17 @@
 package com.albonec.othercode.ui;
 
 import java.io.IOException;
-import java.util.List;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
+
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.util.EnumChatFormatting;
 import org.lwjgl.input.Keyboard;
 
-public final class GuiFeatures
+public final class GuiFeaturesScreen
         extends GuiScreen {
 
     private final GuiScreen previousScreen;
 
-    public GuiFeatures(GuiScreen previousScreen) {
+    public GuiFeaturesScreen(GuiScreen previousScreen) {
         this.previousScreen = previousScreen;
     }
 
@@ -46,7 +42,7 @@ public final class GuiFeatures
         this.buttonList.add(new GuiButton(102, width / 2 - 100, var3 + 72 - 36, "Keystrokes"));
         this.buttonList.add(new GuiButton(103, width / 2 - 100, var3 + 72 - 60, "Show Coordinates"));
 
-        this.buttonList.add(new GuiButton(1, width / 2 - 100, var3 + 72 + 12 + 24, "Back"));
+        this.buttonList.add(new GuiButton(1, width / 2 - 100, var3 + 72 + 12 + 36, "Back"));
         Keyboard.enableRepeatEvents(true);
     }
 
