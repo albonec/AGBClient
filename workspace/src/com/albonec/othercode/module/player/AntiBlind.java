@@ -15,8 +15,10 @@ public class AntiBlind extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate event) {
+        if(mc.gameSettings.doCheats) {
         if(mc.thePlayer.isPotionActive(Potion.blindness)) {
             mc.thePlayer.removePotionEffectClient(15);
+        }
         }
     }
 

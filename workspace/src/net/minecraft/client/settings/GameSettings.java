@@ -197,6 +197,14 @@ public class GameSettings
     /** Determines amount of particles. 0 = All, 1 = Decreased, 2 = Minimal */
     public int particleSetting;
 
+    /** Booleans for added features enable/disable */
+    public boolean doRenderKeystrokes = true;
+    public boolean doZoom = true;
+    public boolean doCheats = true;
+    public boolean doRenderCoordinates = true;
+    public boolean doRenderMemory = true;
+
+
     /** Game settings language */
     public int language;
     public String forceUnicodeFont;
