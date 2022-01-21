@@ -10,7 +10,7 @@ import org.lwjgl.input.Keyboard;
 public class AntiBlind extends Module {
 
     public AntiBlind() {
-        super("Anti Blind", Keyboard.KEY_B, Category.PLAYER);
+        super("Anti Blind", Keyboard.KEY_G, Category.PLAYER);
     }
 
     @EventTarget

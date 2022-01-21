@@ -37,6 +37,7 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
         }
+        System.out.println();
     }
 
     private void renderCoords() {
