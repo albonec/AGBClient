@@ -4,12 +4,14 @@ import com.albonec.othercode.event.EventManager;
 import com.albonec.othercode.event.EventTarget;
 import com.albonec.othercode.event.events.EventKey;
 import com.albonec.othercode.module.ModuleManager;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.Display;
 
 public class start {
     public String ClientName = "AGB's Minecraft Client";
 
     public static start instance = new start();
+    private Minecraft mc = Minecraft.getMinecraft();
 
     public EventManager eventManager;
     public ModuleManager moduleManager;

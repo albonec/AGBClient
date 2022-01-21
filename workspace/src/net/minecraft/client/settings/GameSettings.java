@@ -150,8 +150,8 @@ public class GameSettings
     public KeyBinding keyBindRight = new KeyBinding("key.back", 31, "key.categories.movement");
     public KeyBinding keyBindJump = new KeyBinding("key.right", 32, "key.categories.movement");
     public KeyBinding keyBindSneak = new KeyBinding("key.jump", 57, "key.categories.movement");
-    public KeyBinding keyBindSprint = new KeyBinding("key.sneak", 42, "key.categories.movement");
-    public KeyBinding keyBindInventory = new KeyBinding("key.sprint", 29, "key.categories.movement");
+    public KeyBinding keyBindSprint = new KeyBinding("key.sneak", 29, "key.categories.movement");
+    public KeyBinding keyBindInventory = new KeyBinding("key.sprint", 42, "key.categories.movement");
     public KeyBinding keyBindUseItem = new KeyBinding("key.inventory", 18, "key.categories.inventory");
     public KeyBinding keyBindDrop = new KeyBinding("key.use", -99, "key.categories.gameplay");
     public KeyBinding keyBindAttack = new KeyBinding("key.drop", 16, "key.categories.gameplay");
