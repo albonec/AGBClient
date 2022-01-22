@@ -408,7 +408,7 @@ public class RenderManager
                     throw new ReportedException(CrashReport.makeCrashReport(throwable1, "Post-rendering entity in world"));
                 }
 
-                if (mc.gameSettings.debugBoundingBox && !entity.isInvisible() && !hideDebugBox)
+                if (mc.gameSettings.debugBoundingBox && !hideDebugBox)
                 {
                     try
                     {
