@@ -31,7 +31,7 @@ public class CustomIngameGui extends GuiIngame {
     @Override
     public void renderGameOverlay(float partialTicks) {
         super.renderGameOverlay(partialTicks);
-        if(!mc.gameSettings.showDebugProfilerChart) {
+        if (!mc.gameSettings.showDebugProfilerChart) {
             renderCoords();
             renderMemory();
             renderModules();
@@ -41,7 +41,7 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderCoords() {
-        if(mc.gameSettings.doRenderCoordinates) {
+        if (mc.gameSettings.doRenderCoordinates) {
             DecimalFormat df = new DecimalFormat("0.0000");
             fonts.drawString("Coordinates", 2, 20, 0xffffff);
             fonts.drawString(ChatFormatting.RED + "X: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posX)), 2, 30, 0xffffff);
@@ -51,7 +51,7 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderMemory() {
-        if(mc.gameSettings.doRenderMemory) {
+        if (mc.gameSettings.doRenderMemory) {
             ScaledResolution sr = new ScaledResolution(mc);
             if (("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length() <= 15) {
                 fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 85, 2, 0xffffff);
@@ -65,7 +65,7 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderModules() {
-        if(mc.gameSettings.doCheats) {
+        if (mc.gameSettings.doCheats) {
             fonts.drawString("Enabled Features", 2, 80, 0xffffff);
 
             ArrayList<Module> enabledModules = new ArrayList<Module>();
@@ -109,5 +109,4 @@ public class CustomIngameGui extends GuiIngame {
             fonts.drawString("LMB", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20, 0xffffff);
         }
     }
-
 }
