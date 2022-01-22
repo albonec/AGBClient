@@ -8,8 +8,7 @@ import org.lwjgl.input.Keyboard;
 import com.albonec.othercode.module.Module;
 
 public class QuickHitboxes extends Module {
-
-    private RenderManager rm = mc.getRenderManager();
+    
     private boolean oldSetting;
 
     public QuickHitboxes() {super("Quick Hitboxes", Keyboard.KEY_R, Category.RENDER);}
