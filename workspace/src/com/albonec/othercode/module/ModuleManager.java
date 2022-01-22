@@ -1,12 +1,15 @@
 package com.albonec.othercode.module;
 
 import com.albonec.othercode.module.player.*;
+import com.albonec.othercode.module.render.QuickHitboxes;
 import com.albonec.othercode.module.render.Zoom;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 
 public class ModuleManager {
     private ArrayList<Module> modules = new ArrayList<Module>();
+    private Minecraft mc = Minecraft.getMinecraft();
 
     public ModuleManager() {
         //COMBAT
@@ -15,9 +18,12 @@ public class ModuleManager {
 
         //RENDER
         modules.add(new Zoom());
+        modules.add(new QuickHitboxes());
 
         //PLAYER
-        modules.add(new AntiBlind());
+        if(mc.gameSettings.doCheats) {
+            modules.add(new AntiBlind());
+        }
 
         //MISC
 

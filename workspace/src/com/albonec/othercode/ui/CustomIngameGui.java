@@ -37,7 +37,6 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
         }
-        System.out.println();
     }
 
     private void renderCoords() {
@@ -65,7 +64,6 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderModules() {
-        if (mc.gameSettings.doCheats) {
             fonts.drawString("Enabled Features", 2, 80, 0xffffff);
 
             ArrayList<Module> enabledModules = new ArrayList<Module>();
@@ -80,7 +78,6 @@ public class CustomIngameGui extends GuiIngame {
                 fonts.drawString(ChatFormatting.AQUA + m.getDisplayName(), 2, y, 0xffffff);
                 y += 10;
             }
-        }
     }
 
     private void renderKeyStrokes() {

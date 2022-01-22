@@ -6,6 +6,7 @@ import java.util.Map;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.model.ModelChicken;
@@ -111,6 +112,7 @@ public class RenderManager
     private Map<Class , Render> entityRenderMap = Maps.newHashMap();
     private Map<String, RenderPlayer> skinMap = Maps.<String, RenderPlayer>newHashMap();
     private RenderPlayer playerRenderer;
+    private Minecraft mc = Minecraft.getMinecraft();
 
     /** Renders fonts */
     private FontRenderer textRenderer;
@@ -137,7 +139,6 @@ public class RenderManager
     private boolean renderShadow = true;
 
     /** whether bounding box should be rendered or not */
-    private boolean debugBoundingBox = false;
     public Render renderRender = null;
 
     public RenderManager(TextureManager renderEngineIn, RenderItem itemRendererIn)
@@ -305,16 +306,6 @@ public class RenderManager
         this.renderShadow = renderShadowIn;
     }
 
-    public void setDebugBoundingBox(boolean debugBoundingBoxIn)
-    {
-        this.debugBoundingBox = debugBoundingBoxIn;
-    }
-
-    public boolean isDebugBoundingBox()
-    {
-        return this.debugBoundingBox;
-    }
-
     public boolean renderEntitySimple(Entity entityIn, float partialTicks)
     {
         return this.renderEntityStatic(entityIn, partialTicks, false);
@@ -417,7 +408,7 @@ public class RenderManager
                     throw new ReportedException(CrashReport.makeCrashReport(throwable1, "Post-rendering entity in world"));
                 }
 
-                if (this.debugBoundingBox && !entity.isInvisible() && !hideDebugBox)
+                if (mc.gameSettings.debugBoundingBox && !entity.isInvisible() && !hideDebugBox)
                 {
                     try
                     {
