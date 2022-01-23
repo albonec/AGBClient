@@ -51,17 +51,12 @@ public class CustomIngameGui extends GuiIngame {
 
     private void renderMemory() {
         if (mc.gameSettings.doRenderMemory) {
-            ScaledResolution sr = new ScaledResolution(mc);
-            if (("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length() <= 15) {
-                fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 85, 2, 0xffffff);
-            } else if (("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length() == 16) {
-                fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 90, 2, 0xffffff);
-            } else {
-                fonts.drawString("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB", sr.getScaledWidth() - 95, 2, 0xffffff);
+                ScaledResolution sr = new ScaledResolution(mc);
+                String mem = ("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB");
+                fonts.drawString(mem, sr.getScaledWidth() - fonts.getStringWidth(mem) - 2, 2, 0xffffff);
             }
             //System.out.println(("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length());
         }
-    }
 
     private void renderModules() {
             fonts.drawString("Enabled Features", 2, 80, 0xffffff);
