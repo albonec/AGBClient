@@ -200,7 +200,6 @@ public class GameSettings
     /** Booleans for added features enable/disable */
     public boolean doRenderKeystrokes = true;
     public boolean doZoom = true;
-    public boolean doCheats = false;
     public boolean doRenderCoordinates = true;
     public boolean doRenderMemory = true;
     public boolean debugBoundingBox = false;

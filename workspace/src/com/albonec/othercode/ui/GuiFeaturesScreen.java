@@ -34,12 +34,6 @@ public final class GuiFeaturesScreen
                 wasZoom = mc.gameSettings.doZoom;
                 break;
             }
-            case 101: {
-                mc.gameSettings.doCheats = !wasCheats ? true : false;
-                System.out.println(mc.gameSettings.doCheats);
-                wasCheats = mc.gameSettings.doCheats;
-                break;
-            }
             case 102: {
                 mc.gameSettings.doRenderKeystrokes = !wasKeystrokes ? true : false;
                 System.out.println(mc.gameSettings.doRenderKeystrokes);
@@ -72,10 +66,9 @@ public final class GuiFeaturesScreen
     public void initGui() {
         int var3 = height / 4 + 24;
         this.buttonList.add(new GuiButton(100, width / 2 - 100, var3 + 72 + 12, "Zoom"));
-        this.buttonList.add(new GuiButton(101, width / 2 - 100, var3 + 72 - 12, "Cheats"));
-        this.buttonList.add(new GuiButton(102, width / 2 - 100, var3 + 72 - 36, "Keystrokes"));
-        this.buttonList.add(new GuiButton(103, width / 2 - 100, var3 + 72 - 60, "Show Coordinates"));
-        this.buttonList.add(new GuiButton(104, width / 2 - 100, var3 + 72 - 85, "Show Memory Usage"));
+        this.buttonList.add(new GuiButton(102, width / 2 - 100, var3 + 72 - 12, "Keystrokes"));
+        this.buttonList.add(new GuiButton(103, width / 2 - 100, var3 + 72 - 36, "Show Coordinates"));
+        this.buttonList.add(new GuiButton(104, width / 2 - 100, var3 + 72 - 60, "Show Memory Usage"));
 
         this.buttonList.add(new GuiButton(1, width / 2 - 100, var3 + 72 + 12 + 36, "Back"));
         Keyboard.enableRepeatEvents(true);

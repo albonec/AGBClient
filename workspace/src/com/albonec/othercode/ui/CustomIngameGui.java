@@ -2,18 +2,15 @@ package com.albonec.othercode.ui;
 
 import com.albonec.othercode.module.Module;
 import com.albonec.othercode.start;
-import com.mojang.realmsclient.dto.PlayerInfo;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.network.NetworkPlayerInfo;
-import net.optifine.util.MemoryMonitor;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 import java.text.DecimalFormat;
@@ -23,6 +20,7 @@ public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
     private FontRenderer fonts = mc.fontRendererObj;
     Runtime runtime = Runtime.getRuntime();
+    CPS cps = new CPS();
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -36,6 +34,7 @@ public class CustomIngameGui extends GuiIngame {
             renderMemory();
             renderModules();
             renderKeyStrokes();
+            renderCPS();
         }
     }
 
@@ -85,20 +84,29 @@ public class CustomIngameGui extends GuiIngame {
             int[] DColor = Keyboard.isKeyDown(Keyboard.KEY_D) ? new int[]{255, 255, 255} : new int[]{0, 0, 0};
             int[] LMBColor = Mouse.isButtonDown(0) ? new int[]{255, 255, 255} : new int[]{0, 0, 0};
             int[] RMBColor = Mouse.isButtonDown(1) ? new int[]{255, 255, 255} : new int[]{0, 0, 0};
+            int[] CtrlColor = Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) ? new int[]{255, 255, 255} : new int[]{0, 0, 0};
 
-            Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 29 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 29 - 30, new Color(WColor[0], WColor[1], WColor[2], 100).getRGB());
-            Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29 - 29, sr.getScaledHeight() - 4 - 30, new Color(AColor[0], AColor[1], AColor[2], 100).getRGB());
-            Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 30, new Color(SColor[0], SColor[1], SColor[2], 100).getRGB());
-            Gui.drawRect(sr.getScaledWidth() - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4 - 30, new Color(DColor[0], DColor[1], DColor[2], 100).getRGB());
-            Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4 - 44, sr.getScaledHeight() - 4, new Color(LMBColor[0], LMBColor[1], LMBColor[2], 100).getRGB());
-            Gui.drawRect(sr.getScaledWidth() - 4 - 39, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4, new Color(RMBColor[0], RMBColor[1], RMBColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 29 - 30 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 29 - 30 - 30, new Color(WColor[0], WColor[1], WColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30 - 30, sr.getScaledWidth() - 4 - 29 - 29, sr.getScaledHeight() - 4 - 30 - 30, new Color(AColor[0], AColor[1], AColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30 - 30, sr.getScaledWidth() - 4 - 29, sr.getScaledHeight() - 4 - 30 - 30, new Color(SColor[0], SColor[1], SColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29, sr.getScaledHeight() - 4 - 25 - 30 - 30, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4 - 30 - 30, new Color(DColor[0], DColor[1], DColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4 - 44, sr.getScaledHeight() - 4 - 30, new Color(LMBColor[0], LMBColor[1], LMBColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 4 - 39, sr.getScaledHeight() - 4 - 25 - 30, sr.getScaledWidth() - 4, sr.getScaledHeight() - 4 - 30, new Color(RMBColor[0], RMBColor[1], RMBColor[2], 100).getRGB());
+            Gui.drawRect(sr.getScaledWidth() - 29 - 29 - 29, sr.getScaledHeight() - 4 - 25, sr.getScaledWidth() - 4 - 44, sr.getScaledHeight() - 4, new Color(CtrlColor[0], CtrlColor[1], CtrlColor[2], 100).getRGB());
 
-            fonts.drawString("W", sr.getScaledWidth() - 48, sr.getScaledHeight() - 49 - 30, WColor[0] == 0 ? 0xffffff : 0x000000);
-            fonts.drawString("A", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20 - 30, AColor[0] == 0 ? 0xffffff : 0x000000);
-            fonts.drawString("S", sr.getScaledWidth() - 48, sr.getScaledHeight() - 20 - 30, SColor[0] == 0 ? 0xffffff : 0x000000);
-            fonts.drawString("D", sr.getScaledWidth() - 19, sr.getScaledHeight() - 20 - 30, DColor[0] == 0 ? 0xffffff : 0x000000);
-            fonts.drawString("RMB", sr.getScaledWidth() - 32, sr.getScaledHeight() - 20, RMBColor[0] == 0 ? 0xffffff : 0x000000);
-            fonts.drawString("LMB", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20, LMBColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("W", sr.getScaledWidth() - 48, sr.getScaledHeight() - 49 - 30 - 30, WColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("A", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20 - 30 - 30, AColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("S", sr.getScaledWidth() - 48, sr.getScaledHeight() - 20 - 30 - 30, SColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("D", sr.getScaledWidth() - 19, sr.getScaledHeight() - 20 - 30 - 30, DColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("RMB", sr.getScaledWidth() - 32, sr.getScaledHeight() - 20 - 30, RMBColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("LMB", sr.getScaledWidth() - 77, sr.getScaledHeight() - 20 - 30, LMBColor[0] == 0 ? 0xffffff : 0x000000);
+            fonts.drawString("CTRL", sr.getScaledWidth() - 78, sr.getScaledHeight() - 4 - 12 - 3, CtrlColor[0] == 0 ? 0xffffff : 0x000000);
         }
     }
+
+    public void renderCPS() {
+        ScaledResolution sr = new ScaledResolution(mc);
+        cps.render(sr.getScaledWidth() - fonts.getStringWidth("CPS: " + cps.getCPS()) - 2, 15, 0xffffff);
+    }
+
 }

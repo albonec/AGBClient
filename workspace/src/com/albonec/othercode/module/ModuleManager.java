@@ -1,6 +1,5 @@
 package com.albonec.othercode.module;
 
-import com.albonec.othercode.module.player.*;
 import com.albonec.othercode.module.render.QuickHitboxes;
 import com.albonec.othercode.module.render.Zoom;
 import net.minecraft.client.Minecraft;
@@ -21,9 +20,6 @@ public class ModuleManager {
         modules.add(new QuickHitboxes());
 
         //PLAYER
-        if(mc.gameSettings.doCheats) {
-            modules.add(new AntiBlind());
-        }
 
         //MISC
 
