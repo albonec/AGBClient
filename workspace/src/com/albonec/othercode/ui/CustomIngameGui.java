@@ -1,5 +1,7 @@
 package com.albonec.othercode.ui;
 
+import com.albonec.othercode.misc.CPSLeft;
+import com.albonec.othercode.misc.CPSRight;
 import com.albonec.othercode.module.Module;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -10,7 +12,6 @@ import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 import java.text.DecimalFormat;
@@ -20,7 +21,8 @@ public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
     private FontRenderer fonts = mc.fontRendererObj;
     Runtime runtime = Runtime.getRuntime();
-    CPS cps = new CPS();
+    CPSLeft cpsLeft = new CPSLeft();
+    CPSRight cpsRight = new CPSRight();
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -106,7 +108,12 @@ public class CustomIngameGui extends GuiIngame {
 
     public void renderCPS() {
         ScaledResolution sr = new ScaledResolution(mc);
-        cps.render(sr.getScaledWidth() - fonts.getStringWidth("CPS: " + cps.getCPS()) - 2, 15, 0xffffff);
+        final int Hoffset = 12;
+        final int Voffset = 15;
+        fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (25/10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
+        cpsLeft.render(sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | " + cpsLeft.getCPS()) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
+        cpsRight.render(sr.getScaledWidth() - fonts.getStringWidth(String.valueOf(cpsRight.getCPS())) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
+        fonts.drawString(" | ",sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | ") - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
     }
 
 }

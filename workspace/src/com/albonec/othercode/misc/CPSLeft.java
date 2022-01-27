@@ -1,14 +1,13 @@
-package com.albonec.othercode.ui;
+package com.albonec.othercode.misc;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPS {
+public class CPSLeft {
 
     Minecraft mc = Minecraft.getMinecraft();
     FontRenderer fonts = mc.fontRendererObj;
@@ -25,7 +24,7 @@ public class CPS {
                 this.clicks.add(this.lastPressed);
             }
         }
-        fonts.drawString("CPS: " + getCPS(), x, y, color);
+        fonts.drawString(String.valueOf(getCPS()), x, y, color);
     }
 
     public int getCPS() {
