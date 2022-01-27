@@ -43,7 +43,7 @@ public class CustomIngameGui extends GuiIngame {
     private void renderCoords() {
         if (mc.gameSettings.doRenderCoordinates) {
             DecimalFormat df = new DecimalFormat("0.0000");
-            fonts.drawString("Coordinates", 2, 20, 0xffffff);
+            fonts.drawString(ChatFormatting.RED + "Coordinates", 2, 20, 0xffffff);
             fonts.drawString(ChatFormatting.RED + "X: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posX)), 2, 30, 0xffffff);
             fonts.drawString(ChatFormatting.RED + "Y: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posY)), 2, 40, 0xffffff);
             fonts.drawString(ChatFormatting.RED + "Z: " + ChatFormatting.WHITE + String.valueOf(df.format(mc.thePlayer.posZ)), 2, 50, 0xffffff);
@@ -110,7 +110,7 @@ public class CustomIngameGui extends GuiIngame {
         ScaledResolution sr = new ScaledResolution(mc);
         final int Hoffset = 12;
         final int Voffset = 15;
-        fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (25/10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
+        fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (15/10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
         cpsLeft.render(sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | " + cpsLeft.getCPS()) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
         cpsRight.render(sr.getScaledWidth() - fonts.getStringWidth(String.valueOf(cpsRight.getCPS())) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
         fonts.drawString(" | ",sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | ") - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
