@@ -164,7 +164,7 @@ public class GameSettings
     public KeyBinding keyBindSmoothCamera = new KeyBinding("key.togglePerspective", 63, "key.categories.misc");
     public KeyBinding keyBindFullscreen = new KeyBinding("key.smoothCamera", 0, "key.categories.misc");
     public KeyBinding keyBindSpectatorOutlines = new KeyBinding("key.fullscreen", 87, "key.categories.misc");
-    public KeyBinding keyBindStreamStartStop = new KeyBinding("key.spectatorOutlines", 0, "key.categories.misc");
+    public KeyBinding keyBindStreamStartStop = new KeyBinding("key.spectatorOutlines",62 , "key.categories.misc");
     public KeyBinding keyBindStreamPauseUnpause = new KeyBinding("key.streamStartStop", 64, "key.categories.stream");
     public KeyBinding keyBindStreamCommercials = new KeyBinding("key.streamPauseUnpause", 65, "key.categories.stream");
     public KeyBinding keyBindStreamToggleMic = new KeyBinding("key.streamCommercial", 0, "key.categories.stream");
@@ -230,7 +230,7 @@ public class GameSettings
     public int ofAutoSaveTicks = 4000;
     public boolean ofLagometer = false;
     public boolean ofProfiler = false;
-    public boolean ofShowFps = false;
+    public boolean ofShowFps = true;
     public boolean ofWeather = true;
     public boolean ofSky = true;
     public boolean ofStars = true;

@@ -53,7 +53,7 @@ public class CustomIngameGui extends GuiIngame {
     private void renderMemory() {
         if (mc.gameSettings.doRenderMemory) {
                 ScaledResolution sr = new ScaledResolution(mc);
-                String mem = ("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB");
+                String mem = (ChatFormatting.AQUA + "RAM: " + ChatFormatting.WHITE + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + ChatFormatting.AQUA + " MB");
                 fonts.drawString(mem, sr.getScaledWidth() - fonts.getStringWidth(mem) - 2, 2, 0xffffff);
             }
             //System.out.println(("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length());
@@ -108,7 +108,7 @@ public class CustomIngameGui extends GuiIngame {
 
     public void renderCPS() {
         ScaledResolution sr = new ScaledResolution(mc);
-        final int Hoffset = 12;
+        final int Hoffset = (135/10);
         final int Voffset = 15;
         fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (15/10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
         cpsLeft.render(sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | " + cpsLeft.getCPS()) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
