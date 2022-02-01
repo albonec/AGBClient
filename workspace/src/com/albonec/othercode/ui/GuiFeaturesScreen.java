@@ -11,11 +11,6 @@ public final class GuiFeaturesScreen
         extends GuiScreen {
 
     private final GuiScreen previousScreen;
-    public boolean wasKeystrokes;
-    public boolean wasZoom;
-    public boolean wasCheats;
-    public boolean wasRenderCoordinates;
-    public boolean wasRenderMemory;
 
     public GuiFeaturesScreen(GuiScreen previousScreen) {
         this.previousScreen = previousScreen;
@@ -29,27 +24,33 @@ public final class GuiFeaturesScreen
                 break;
             }
             case 100: {
-                mc.gameSettings.doZoom = !wasZoom ? true : false;
+                mc.gameSettings.doZoom = !mc.gameSettings.wasZoom ? true : false;
                 System.out.println(mc.gameSettings.doZoom);
-                wasZoom = mc.gameSettings.doZoom;
+                mc.gameSettings.wasZoom = mc.gameSettings.doZoom;
                 break;
             }
             case 102: {
-                mc.gameSettings.doRenderKeystrokes = !wasKeystrokes ? true : false;
+                mc.gameSettings.doRenderKeystrokes = !mc.gameSettings.wasKeystrokes ? true : false;
                 System.out.println(mc.gameSettings.doRenderKeystrokes);
-                wasKeystrokes = mc.gameSettings.doRenderKeystrokes;
+                mc.gameSettings.wasKeystrokes = mc.gameSettings.doRenderKeystrokes;
                 break;
             }
             case 103: {
-                mc.gameSettings.doRenderCoordinates = !wasRenderCoordinates ? true : false;
+                mc.gameSettings.doRenderCoordinates = !mc.gameSettings.wasRenderCoordinates ? true : false;
                 System.out.println(mc.gameSettings.doRenderCoordinates);
-                wasRenderCoordinates = mc.gameSettings.doRenderCoordinates;
+                mc.gameSettings.wasRenderCoordinates = mc.gameSettings.doRenderCoordinates;
                 break;
             }
             case 104: {
-                mc.gameSettings.doRenderMemory = !wasRenderMemory ? true : false;
+                mc.gameSettings.doRenderMemory = !mc.gameSettings.wasRenderMemory ? true : false;
                 System.out.println(mc.gameSettings.doRenderMemory);
-                wasRenderMemory = mc.gameSettings.doRenderMemory;
+                mc.gameSettings.wasRenderMemory = mc.gameSettings.doRenderMemory;
+                break;
+            }
+            case 105: {
+                mc.gameSettings.doRenderArmor = !mc.gameSettings.wasRenderArmor ? true : false;
+                System.out.println(mc.gameSettings.doRenderArmor);
+                mc.gameSettings.wasRenderArmor = mc.gameSettings.doRenderArmor;
                 break;
             }
         }
@@ -69,6 +70,7 @@ public final class GuiFeaturesScreen
         this.buttonList.add(new GuiButton(102, width / 2 - 100, var3 + 72 - 12, "Keystrokes"));
         this.buttonList.add(new GuiButton(103, width / 2 - 100, var3 + 72 - 36, "Show Coordinates"));
         this.buttonList.add(new GuiButton(104, width / 2 - 100, var3 + 72 - 60, "Show Memory Usage"));
+        this.buttonList.add(new GuiButton(105, width / 2 - 100, var3 + 72 - 85, "Render Armor"));
 
         this.buttonList.add(new GuiButton(1, width / 2 - 100, var3 + 72 + 12 + 36, "Back"));
         Keyboard.enableRepeatEvents(true);

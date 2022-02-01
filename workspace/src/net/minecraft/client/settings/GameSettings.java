@@ -203,6 +203,14 @@ public class GameSettings
     public boolean doRenderCoordinates = true;
     public boolean doRenderMemory = true;
     public boolean debugBoundingBox = false;
+    public boolean doRenderArmor = true;
+
+    public boolean wasKeystrokes;
+    public boolean wasZoom;
+    public boolean wasCheats;
+    public boolean wasRenderCoordinates;
+    public boolean wasRenderMemory;
+    public boolean wasRenderArmor;
 
 
     /** Game settings language */

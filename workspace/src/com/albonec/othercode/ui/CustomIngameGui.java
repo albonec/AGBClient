@@ -39,7 +39,7 @@ public class CustomIngameGui extends GuiIngame {
             renderKeyStrokes();
             renderCPS();
         }
-        renderHP();
+        //renderHP();
         renderArmor();
     }
 
@@ -129,24 +129,25 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderArmor() {
-        ScaledResolution sr = new ScaledResolution(mc);
+        if(mc.gameSettings.doRenderArmor) {
+            ScaledResolution sr = new ScaledResolution(mc);
 
-        if(mc.thePlayer.getCurrentArmor(0) != null) {
-            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(0), sr.getScaledWidth() / 2 + 75, sr.getScaledHeight() - 55);
+            if (mc.thePlayer.getCurrentArmor(0) != null) {
+                mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(0), sr.getScaledWidth() / 2 + 75, sr.getScaledHeight() - 55);
+            }
+
+            if (mc.thePlayer.getCurrentArmor(1) != null) {
+                mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(1), sr.getScaledWidth() / 2 + 55, sr.getScaledHeight() - 55);
+            }
+
+            if (mc.thePlayer.getCurrentArmor(2) != null) {
+                mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(2), sr.getScaledWidth() / 2 + 35, sr.getScaledHeight() - 55);
+            }
+
+            if (mc.thePlayer.getCurrentArmor(3) != null) {
+                mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(3), sr.getScaledWidth() / 2 + 15, sr.getScaledHeight() - 55);
+            }
         }
-
-        if(mc.thePlayer.getCurrentArmor(1) != null) {
-            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(1), sr.getScaledWidth() / 2 + 55, sr.getScaledHeight() - 55);
-        }
-
-        if(mc.thePlayer.getCurrentArmor(2) != null) {
-            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(2), sr.getScaledWidth() / 2 + 35, sr.getScaledHeight() - 55);
-        }
-
-        if(mc.thePlayer.getCurrentArmor(3) != null) {
-            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(3), sr.getScaledWidth() / 2 + 15, sr.getScaledHeight() - 55);
-        }
-
     }
 
 }
