@@ -124,7 +124,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     /**
      * the total health of the player, includes actual health and absorption health. Updated every tick.
      */
-    private float combinedHealth = Float.MIN_VALUE;
+    public float combinedHealth = Float.MIN_VALUE;
 
     /** amount of health the client was last set to */
     private float lastHealth = -1.0E8F;

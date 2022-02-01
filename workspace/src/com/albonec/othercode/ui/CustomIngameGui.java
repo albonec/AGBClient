@@ -121,79 +121,31 @@ public class CustomIngameGui extends GuiIngame {
 
     private void renderHP() {
         ScaledResolution sr = new ScaledResolution(mc);
-        fonts.drawString((int)mc.thePlayer.getHealth() + " / " + (int)mc.thePlayer.getMaxHealth() + " HP", sr.getScaledWidth() / 2 - 90, sr.getScaledHeight() - 50, 0x0000000);
+        if (mc.thePlayer.getCurrentArmor(0) == null && mc.thePlayer.getCurrentArmor(1) == null && mc.thePlayer.getCurrentArmor(2) == null && mc.thePlayer.getCurrentArmor(3) == null) {
+            fonts.drawString((int) mc.thePlayer.getHealth() + " / " + (int) mc.thePlayer.getMaxHealth() + " HP", sr.getScaledWidth() / 2 - 90, sr.getScaledHeight() - 50, 0x0000000);
+        } else {
+            fonts.drawString((int) mc.thePlayer.getHealth() + " / " + (int) mc.thePlayer.getMaxHealth() + " HP", sr.getScaledWidth() / 2 - 90, sr.getScaledHeight() - 60, 0x0000000);
+        }
     }
 
     private void renderArmor() {
         ScaledResolution sr = new ScaledResolution(mc);
-        String currentHelmet = null;
-        String currentChestplate = null;
-        String currentLeggings = null;
-        String currentBoots = null;
 
-        switch (String.valueOf(mc.thePlayer.getCurrentArmor(0))) {
-            case "1xitem.bootsLeather@0":
-                currentBoots = "leather boots";
-                break;
-            case "1xitem.bootsIron@0":
-                currentBoots = "iron boots";
-                break;
-            case "1xitem.bootsGold@0":
-                currentBoots = "gold boots";
-                break;
-            case "1xitem.bootsDiamond@0":
-                currentBoots = "diamond boots";
-                break;
-        }
-        switch (String.valueOf(mc.thePlayer.getCurrentArmor(1))) {
-            case "1xitem.leggingsLeather@0":
-                currentLeggings = "leather leggings";
-                break;
-            case "1xitem.leggingsIron@0":
-                currentLeggings = "iron leggings";
-                break;
-            case "1xitem.leggingsGold@0":
-                currentLeggings = "gold leggings";
-                break;
-            case "1xitem.leggingsDiamond@0":
-                currentLeggings = "diamond leggings";
-                break;
-        }
-        switch (String.valueOf(mc.thePlayer.getCurrentArmor(2))) {
-            case "1xitem.chestplateLeather@0":
-                currentChestplate = ("leather chestplate");
-                break;
-            case "1xitem.chestplateIron@0":
-                currentChestplate = ("iron chestplate");
-                break;
-            case "1xitem.chestplateGold@0":
-                currentChestplate = ("gold chestplate");
-                break;
-            case "1xitem.chestplateDiamond@0":
-                currentChestplate = ("diamond chestplate");
-                break;
-        }
-        switch (String.valueOf(mc.thePlayer.getCurrentArmor(3))) {
-            case "1xitem.helmetLeather@0":
-                currentHelmet = "leather helmet";
-                break;
-            case "1xitem.helmetIron@0":
-                currentHelmet = "iron helmet";
-                break;
-            case "1xitem.helmetGold@0":
-                currentHelmet = "gold helmet";
-                break;
-            case "1xitem.helmetDiamond@0":
-                currentHelmet = "diamond helmet";
-                break;
+        if(mc.thePlayer.getCurrentArmor(0) != null) {
+            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(0), sr.getScaledWidth() / 2 + 75, sr.getScaledHeight() - 55);
         }
 
+        if(mc.thePlayer.getCurrentArmor(1) != null) {
+            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(1), sr.getScaledWidth() / 2 + 55, sr.getScaledHeight() - 55);
+        }
 
-        fonts.drawString(currentHelmet, 5, sr.getScaledHeight() - 50, 0xffffff);
-        fonts.drawString(currentChestplate, 5, sr.getScaledHeight() - 40, 0xffffff);
-        fonts.drawString(currentLeggings, 5, sr.getScaledHeight() - 30, 0xffffff);
-        fonts.drawString(currentBoots, 5, sr.getScaledHeight() - 20, 0xffffff);
+        if(mc.thePlayer.getCurrentArmor(2) != null) {
+            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(2), sr.getScaledWidth() / 2 + 35, sr.getScaledHeight() - 55);
+        }
 
+        if(mc.thePlayer.getCurrentArmor(3) != null) {
+            mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(3), sr.getScaledWidth() / 2 + 15, sr.getScaledHeight() - 55);
+        }
 
     }
 
