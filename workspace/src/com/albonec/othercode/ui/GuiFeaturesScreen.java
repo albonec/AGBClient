@@ -85,7 +85,7 @@ public final class GuiFeaturesScreen
     @Override
     public void drawScreen(int x2, int y2, float z2) {
         this.drawDefaultBackground();
-        this.drawCenteredString(this.mc.fontRendererObj, "Feature Settings", width / 2, 20, -1);
+        this.drawCenteredString(this.mc.fontRendererObj, "AGBClient Feature Settings", width / 2, 20, -1);
         super.drawScreen(x2, y2, z2);
     }
 
