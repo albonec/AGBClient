@@ -37,7 +37,6 @@ public final class GuiFeaturesScreen
             case 100: {
                 this.buttonList.remove(zoomButton);
                 mc.gameSettings.doZoom = !mc.gameSettings.wasZoom ? true : false;
-                System.out.println(mc.gameSettings.doZoom);
                 mc.gameSettings.wasZoom = mc.gameSettings.doZoom;
                 zoomButton = new GuiButton(100, sr.getScaledWidth() / 2 - 100, sr.getScaledHeight() - 60, mc.gameSettings.wasZoom ? "Zoom: On" : "Zoom: Off");
                 this.buttonList.add(zoomButton);
@@ -46,7 +45,6 @@ public final class GuiFeaturesScreen
             case 102: {
                 this.buttonList.remove(keystrokesButton);
                 mc.gameSettings.doRenderKeystrokes = !mc.gameSettings.wasKeystrokes ? true : false;
-                System.out.println(mc.gameSettings.doRenderKeystrokes);
                 mc.gameSettings.wasKeystrokes = mc.gameSettings.doRenderKeystrokes;
                 keystrokesButton = new GuiButton(102, sr.getScaledWidth() / 2 - 100, sr.getScaledHeight() - 90, mc.gameSettings.wasKeystrokes ? "Keystrokes: On" : "Keystrokes: Off");
                 this.buttonList.add(keystrokesButton);
@@ -55,7 +53,6 @@ public final class GuiFeaturesScreen
             case 103: {
                 this.buttonList.remove(renderCoordsButton);
                 mc.gameSettings.doRenderCoordinates = !mc.gameSettings.wasRenderCoordinates ? true : false;
-                System.out.println(mc.gameSettings.doRenderCoordinates);
                 mc.gameSettings.wasRenderCoordinates = mc.gameSettings.doRenderCoordinates;
                 renderCoordsButton = new GuiButton(103, sr.getScaledWidth() / 2 - 100, sr.getScaledHeight() - 120, mc.gameSettings.wasRenderCoordinates ? "Render Coordinates: On" : "Render Coordinates: Off");
                 this.buttonList.add(renderCoordsButton);
@@ -64,7 +61,6 @@ public final class GuiFeaturesScreen
             case 104: {
                 this.buttonList.remove(memUsageButton);
                 mc.gameSettings.doRenderMemory = !mc.gameSettings.wasRenderMemory ? true : false;
-                System.out.println(mc.gameSettings.doRenderMemory);
                 mc.gameSettings.wasRenderMemory = mc.gameSettings.doRenderMemory;
                 memUsageButton = new GuiButton(104, sr.getScaledWidth() / 2 - 100, sr.getScaledHeight() - 150, mc.gameSettings.wasRenderMemory ? "Render Memory Usage: On" : "Render Memory Usage: Off");
                 this.buttonList.add(memUsageButton);
@@ -73,7 +69,6 @@ public final class GuiFeaturesScreen
             case 105: {
                 this.buttonList.remove(renderArmorButton);
                 mc.gameSettings.doRenderArmor = !mc.gameSettings.wasRenderArmor ? true : false;
-                System.out.println(mc.gameSettings.doRenderArmor);
                 mc.gameSettings.wasRenderArmor = mc.gameSettings.doRenderArmor;
                 renderArmorButton = new GuiButton(105, sr.getScaledWidth() / 2 - 100, sr.getScaledHeight() - 180, mc.gameSettings.wasRenderArmor ? "Render Armor Equipped: On" : "Render Armor Equipped: Off");
                 this.buttonList.add(renderArmorButton);
