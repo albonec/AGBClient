@@ -2,7 +2,6 @@ package com.albonec.othercode.ui;
 
 import com.albonec.othercode.misc.CPSLeft;
 import com.albonec.othercode.misc.CPSRight;
-import com.albonec.othercode.misc.CalcSpeed;
 import com.albonec.othercode.module.Module;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -11,7 +10,6 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.entity.player.EntityPlayerMP;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
@@ -22,7 +20,6 @@ import java.util.ArrayList;
 public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
     private FontRenderer fonts = mc.fontRendererObj;
-    CalcSpeed calcSpeed = new CalcSpeed();
     Runtime runtime = Runtime.getRuntime();
     CPSLeft cpsLeft = new CPSLeft();
     CPSRight cpsRight = new CPSRight();
@@ -40,7 +37,6 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
             renderCPS();
-            renderSpeed();
         }
         //renderHP();
         renderArmor();
@@ -152,11 +148,4 @@ public class CustomIngameGui extends GuiIngame {
             }
         }
     }
-
-    private void renderSpeed() {
-        ScaledResolution sr = new ScaledResolution(mc);
-
-        System.out.println(calcSpeed.calcSpeed(calcSpeed.getPosChangePerSec()));
-    }
-
 }
