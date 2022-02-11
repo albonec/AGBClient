@@ -25,6 +25,7 @@ public class CustomIngameGui extends GuiIngame {
     Runtime runtime = Runtime.getRuntime();
     CPSLeft cpsLeft = new CPSLeft();
     CPSRight cpsRight = new CPSRight();
+    private boolean isSpeedThreadOn = false;
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -39,7 +40,10 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
             renderCPS();
-            new CalcSpeedThread().start();
+            if(!isSpeedThreadOn) {
+                new CalcSpeedThread().start();
+                isSpeedThreadOn = true;
+            }
         }
         //renderHP();
         renderArmor();

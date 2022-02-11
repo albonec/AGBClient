@@ -3,15 +3,20 @@ package com.albonec.othercode.misc;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.core.helpers.SystemClock;
 
+import java.text.DecimalFormat;
+
 public class CalcSpeedThread extends Thread {
     Minecraft mc = Minecraft.getMinecraft();
+    DecimalFormat df = new DecimalFormat("0.000");
 
     @Override
     public void run() {
-        try {
-            System.out.println(calcSpeed(getPosChangePerSec()));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while(!this.isInterrupted()) {
+            try {
+                System.out.println(df.format(calcSpeed(getPosChangePerSec())));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -27,13 +32,7 @@ public class CalcSpeedThread extends Thread {
     }
 
     public double calcSpeed(double[] posChange) {
-        double speed2D = Math.hypot(posChange[0], posChange[2]);
-
-        if (posChange[2] != 0) {
-            double speed3D = Math.hypot(posChange[1], speed2D);
+            double speed3D = Math.hypot(posChange[1], Math.hypot(posChange[0], posChange[2]));
             return speed3D;
-        } else {
-            return speed2D;
-        }
     }
 }
