@@ -3,16 +3,27 @@ package com.albonec.othercode.misc;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.core.helpers.SystemClock;
 
-public class CalcSpeed {
+public class CalcSpeedThread extends Thread {
     Minecraft mc = Minecraft.getMinecraft();
 
-    public double[] getPosChangePerSec() {
+    @Override
+    public void run() {
+        try {
+            System.out.println(calcSpeed(getPosChangePerSec()));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public double[] getPosChangePerSec() throws InterruptedException {
         long prevTime = System.currentTimeMillis();
         double prevX = mc.thePlayer.posX;
         double prevY = mc.thePlayer.posY;
         double prevZ = mc.thePlayer.posZ;
 
-        return new double[]{mc.thePlayer.posX - prevX, mc.thePlayer.posY - prevY, mc.thePlayer.posZ - mc.thePlayer.posZ - prevZ};
+        Thread.sleep(1000);
+
+        return new double[]{Math.abs(mc.thePlayer.posX) - Math.abs(prevX), Math.abs(mc.thePlayer.posY) - Math.abs(prevY), Math.abs(mc.thePlayer.posZ) - Math.abs(prevZ)};
     }
 
     public double calcSpeed(double[] posChange) {
