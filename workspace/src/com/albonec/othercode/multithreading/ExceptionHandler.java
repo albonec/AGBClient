@@ -1,4 +1,4 @@
-package com.albonec.othercode.misc;
+package com.albonec.othercode.multithreading;
 
 import java.lang.Thread;
 

@@ -1,27 +1,25 @@
-package com.albonec.othercode.misc;
+package com.albonec.othercode.multithreading;
 
 import net.minecraft.client.Minecraft;
-import org.apache.logging.log4j.core.helpers.SystemClock;
+import net.minecraft.client.gui.FontRenderer;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
 
 public class CalcSpeedThread extends Thread {
-    Minecraft mc = Minecraft.getMinecraft();
-    DecimalFormat df = new DecimalFormat("0.000");
+    private Minecraft mc = Minecraft.getMinecraft();
+    private DecimalFormat df = new DecimalFormat("0.000");
+    private FontRenderer fonts = mc.fontRendererObj;
+
 
     @Override
     public void run() {
         Thread.currentThread().setUncaughtExceptionHandler(new ExceptionHandler());
         while (!this.isInterrupted()) {
-            if (this.mc.thePlayer != null) {
-                try {
-                    System.out.println(df.format(calcSpeed(getPosChangePerSec())));
-                } catch (InterruptedException n) {
-                    n.printStackTrace();
-                }
-            } else {
-                this.interrupt();
+            try {
+                this.mc.gameSettings.playerSpeed = Double.parseDouble(df.format(calcSpeed(getPosChangePerSec())));
+            } catch (InterruptedException n) {
+                n.printStackTrace();
             }
         }
     }

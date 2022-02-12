@@ -212,6 +212,7 @@ public class GameSettings
     public boolean wasRenderMemory;
     public boolean wasRenderArmor;
     public boolean isSpeedThreadOn = false;
+    public double playerSpeed = 0;
 
 
     /** Game settings language */
