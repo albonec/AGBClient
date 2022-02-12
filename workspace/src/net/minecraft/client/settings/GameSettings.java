@@ -211,6 +211,7 @@ public class GameSettings
     public boolean wasRenderCoordinates;
     public boolean wasRenderMemory;
     public boolean wasRenderArmor;
+    public boolean isSpeedThreadOn = false;
 
 
     /** Game settings language */
