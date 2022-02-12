@@ -2,6 +2,7 @@ package com.albonec.othercode.ui;
 
 import com.albonec.othercode.misc.CPSLeft;
 import com.albonec.othercode.misc.CPSRight;
+import com.albonec.othercode.multithreading.CalcSpeedThread;
 import com.albonec.othercode.module.Module;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -23,6 +24,7 @@ public class CustomIngameGui extends GuiIngame {
     Runtime runtime = Runtime.getRuntime();
     CPSLeft cpsLeft = new CPSLeft();
     CPSRight cpsRight = new CPSRight();
+    CalcSpeedThread speed = new CalcSpeedThread();
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -37,6 +39,11 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
             renderCPS();
+            if(!mc.gameSettings.isSpeedThreadOn) {
+                new CalcSpeedThread().start();
+                mc.gameSettings.isSpeedThreadOn = true;
+            }
+            renderSpeed();
         }
         //renderHP();
         renderArmor();
@@ -147,5 +154,10 @@ public class CustomIngameGui extends GuiIngame {
                 mc.getRenderItem().renderItemIntoGUI(mc.thePlayer.getCurrentArmor(3), sr.getScaledWidth() / 2 + 15, sr.getScaledHeight() - 55);
             }
         }
+    }
+
+    private void renderSpeed() {
+        ScaledResolution sr = new ScaledResolution(mc);
+        fonts.drawString("Speed: " + this.mc.gameSettings.playerSpeed + " m/s", sr.getScaledWidth() - fonts.getStringWidth("Speed: " + this.mc.gameSettings.playerSpeed + " m/s") - 2, 50, 0x000000);
     }
 }

@@ -44,6 +44,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
     private static final AtomicInteger field_175373_f = new AtomicInteger(0);
     private static final Logger logger = LogManager.getLogger();
     private static final Random RANDOM = new Random();
+    private Minecraft mc = Minecraft.getMinecraft();
 
     /** Counts the number of screen updates. */
     private float updateCounter;
@@ -97,6 +98,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
     public GuiMainMenu()
     {
+        mc.gameSettings.isSpeedThreadOn = false;
         this.openGLWarning2 = field_96138_a;
         this.L = false;
         this.splashText = "missingno";
