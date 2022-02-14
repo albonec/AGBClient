@@ -24,7 +24,7 @@ public class CalcSpeedThread extends Thread {
         }
     }
 
-
+// output array has coords x, y, z at respective indexes 0, 1, 2
     public double[] getPosChangePerSec() throws InterruptedException {
 
         double prevX = mc.thePlayer.posX;
@@ -33,7 +33,7 @@ public class CalcSpeedThread extends Thread {
 
         Thread.sleep(1000);
 
-        return new double[]{Math.abs(mc.thePlayer.posX) - Math.abs(prevX), Math.abs(mc.thePlayer.posY) - Math.abs(prevY), Math.abs(mc.thePlayer.posZ) - Math.abs(prevZ)};
+        return new double[] {Math.abs(mc.thePlayer.posX) - Math.abs(prevX), Math.abs(mc.thePlayer.posY) - Math.abs(prevY), Math.abs(mc.thePlayer.posZ) - Math.abs(prevZ)};
     }
 
     public double calcSpeed(@NotNull double[] posChange) {
