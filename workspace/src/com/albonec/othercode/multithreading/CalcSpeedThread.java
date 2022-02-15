@@ -39,4 +39,8 @@ public class CalcSpeedThread extends Thread {
     public double calcSpeed(@NotNull double[] posChange) {
         return Math.hypot(posChange[1], Math.hypot(posChange[0], posChange[2]));
     }
+
+    public double verticalAngleDisplacement(@NotNull double[] posChange) {
+        return Math.atan(posChange[1] / Math.hypot(posChange[0], posChange[2]));
+    }
 }
