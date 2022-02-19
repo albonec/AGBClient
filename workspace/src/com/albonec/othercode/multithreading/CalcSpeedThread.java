@@ -18,6 +18,7 @@ public class CalcSpeedThread extends Thread {
         while (!this.isInterrupted()) {
             try {
                 this.mc.gameSettings.playerSpeed = Double.parseDouble(df.format(calcSpeed(getPosChangePerSec())));
+                this.mc.gameSettings.vertAngle = Double.parseDouble(df.format(verticalAngleDisplacement(getPosChangePerSec())));
             } catch (InterruptedException n) {
                 n.printStackTrace();
             }
@@ -41,6 +42,11 @@ public class CalcSpeedThread extends Thread {
     }
 
     public double verticalAngleDisplacement(@NotNull double[] posChange) {
-        return Math.atan(posChange[1] / Math.hypot(posChange[0], posChange[2]));
+        double angle = Math.atan(posChange[1] / Math.hypot(posChange[0], posChange[2])) * (180/Math.PI);
+        if(Double.isNaN(angle)) {
+            return 0.0;
+        } else {
+            return angle;
+        }
     }
 }
