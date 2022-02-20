@@ -16,29 +16,19 @@ public class CalcSpeedThread extends Thread {
     public void run() {
         Thread.currentThread().setUncaughtExceptionHandler(new ExceptionHandler());
         while (!this.isInterrupted()) {
-            try {
-                this.mc.gameSettings.playerSpeed = Double.parseDouble(df.format(calcSpeed(getPosChangePerSec())));
-                this.mc.gameSettings.vertAngle = Double.parseDouble(df.format(verticalAngleDisplacement(getPosChangePerSec())));
-            } catch (InterruptedException n) {
-                n.printStackTrace();
-            }
+            this.mc.gameSettings.playerSpeed = Double.parseDouble(df.format(calcSpeed(getPosChangePerTick())));
+            this.mc.gameSettings.vertAngle = Double.parseDouble(df.format(verticalAngleDisplacement(getPosChangePerTick())));
         }
     }
 
 // output array has coords x, y, z at respective indexes 0, 1, 2
-    public double[] getPosChangePerSec() throws InterruptedException {
+    public double[] getPosChangePerTick() {
 
-        double prevX = mc.thePlayer.posX;
-        double prevY = mc.thePlayer.posY;
-        double prevZ = mc.thePlayer.posZ;
-
-        Thread.sleep(1000);
-
-        return new double[] {Math.abs(mc.thePlayer.posX) - Math.abs(prevX), Math.abs(mc.thePlayer.posY) - Math.abs(prevY), Math.abs(mc.thePlayer.posZ) - Math.abs(prevZ)};
+        return new double[] {Math.abs(mc.thePlayer.posX) - Math.abs(mc.thePlayer.lastTickPosX), Math.abs(mc.thePlayer.posY) - Math.abs(mc.thePlayer.lastTickPosY), Math.abs(mc.thePlayer.posZ) - Math.abs(mc.thePlayer.lastTickPosZ)};
     }
 
     public double calcSpeed(@NotNull double[] posChange) {
-        return Math.hypot(posChange[1], Math.hypot(posChange[0], posChange[2]));
+        return 20 * Math.hypot(posChange[1], Math.hypot(posChange[0], posChange[2]));
     }
 
     public double verticalAngleDisplacement(@NotNull double[] posChange) {
