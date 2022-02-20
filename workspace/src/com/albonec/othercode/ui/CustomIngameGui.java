@@ -43,7 +43,7 @@ public class CustomIngameGui extends GuiIngame {
                 new CalcSpeedThread().start();
                 mc.gameSettings.isSpeedThreadOn = true;
             }
-            renderSpeed();
+            renderMotion();
         }
         //renderHP();
         renderArmor();
@@ -156,9 +156,9 @@ public class CustomIngameGui extends GuiIngame {
         }
     }
 
-    private void renderSpeed() {
+    private void renderMotion() {
         ScaledResolution sr = new ScaledResolution(mc);
-        fonts.drawString("Speed: " + this.mc.gameSettings.playerSpeed + " m/s", sr.getScaledWidth() - fonts.getStringWidth("Speed: " + this.mc.gameSettings.playerSpeed + " m/s") - 2, 50, 0x000000);
-        fonts.drawString("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg", sr.getScaledWidth() - fonts.getStringWidth("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg") - 2, 60, 0x000000);
+        fonts.drawString("Speed: " + this.mc.gameSettings.playerSpeed + " m/s", sr.getScaledWidth() - fonts.getStringWidth("Speed: " + this.mc.gameSettings.playerSpeed + " m/s") - 2, 50, 0xffffff);
+        fonts.drawString("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg", sr.getScaledWidth() - fonts.getStringWidth("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg") - 2, 60, 0xffffff);
     }
 }
