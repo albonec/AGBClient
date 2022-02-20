@@ -23,7 +23,6 @@ public class CalcSpeedThread extends Thread {
 
 // output array has coords x, y, z at respective indexes 0, 1, 2
     public double[] getPosChangePerTick() {
-
         return new double[] {Math.abs(mc.thePlayer.posX) - Math.abs(mc.thePlayer.lastTickPosX), Math.abs(mc.thePlayer.posY) - Math.abs(mc.thePlayer.lastTickPosY), Math.abs(mc.thePlayer.posZ) - Math.abs(mc.thePlayer.lastTickPosZ)};
     }
 
