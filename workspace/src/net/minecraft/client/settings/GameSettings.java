@@ -204,6 +204,7 @@ public class GameSettings
     public boolean doRenderMemory = true;
     public boolean debugBoundingBox = false;
     public boolean doRenderArmor = true;
+    public boolean doRenderMotion = true;
 
     public boolean wasKeystrokes;
     public boolean wasZoom;
@@ -211,6 +212,7 @@ public class GameSettings
     public boolean wasRenderCoordinates;
     public boolean wasRenderMemory;
     public boolean wasRenderArmor;
+    public boolean wasRenderMotion;
     public boolean isSpeedThreadOn = false;
     public double playerSpeed = 0;
     public double vertAngle = 0.0;
