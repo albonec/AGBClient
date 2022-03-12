@@ -16,7 +16,7 @@ public class ZoomThread extends Thread {
                     Thread.sleep(50);
                 }
                 if (Keyboard.isKeyDown(Keyboard.KEY_DOWN) && mc.gameSettings.gammaSetting <= 75.0F) {
-                    mc.gameSettings.gammaSetting += Math.sqrt(mc.gameSettings.gammaSetting + PressedZoomKey.UP.increase);
+                    mc.gameSettings.gammaSetting += Math.sqrt(mc.gameSettings.gammaSetting + PressedZoomKey.DOWN.increase);
                     Thread.sleep(50);
                 }
             } catch (InterruptedException e) {
