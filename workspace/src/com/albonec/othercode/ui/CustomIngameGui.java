@@ -4,6 +4,7 @@ import com.albonec.othercode.misc.CPSLeft;
 import com.albonec.othercode.misc.CPSRight;
 import com.albonec.othercode.multithreading.CalcSpeedThread;
 import com.albonec.othercode.module.Module;
+import com.albonec.othercode.multithreading.TrajectoriesThread;
 import com.albonec.othercode.start;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -41,6 +42,7 @@ public class CustomIngameGui extends GuiIngame {
             renderCPS();
             if(!mc.gameSettings.isSpeedThreadOn) {
                 new CalcSpeedThread().start();
+                new TrajectoriesThread().start();
                 mc.gameSettings.isSpeedThreadOn = true;
             }
             renderMotion();
