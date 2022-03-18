@@ -9,7 +9,7 @@ public class TrajectoriesThread extends Thread {
     public void run() {
         Thread.currentThread().setUncaughtExceptionHandler(new ExceptionHandler());
         while (!this.isInterrupted()) {
-            System.out.println(getActualYaw(mc.thePlayer.rotationYawHead));
+//            System.out.println(getActualYaw(mc.thePlayer.rotationYawHead));
         }
     }
 
