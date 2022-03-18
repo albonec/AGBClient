@@ -15,14 +15,23 @@ public class TrajectoriesThread extends Thread {
 
     private double getActualYaw(double reportedYaw) {
         double outYaw = reportedYaw;
-        int sign = reportedYaw < 0 ? -1 : 1;
-        if (Math.abs(reportedYaw) <= 360) {
-            return reportedYaw;
+        if (reportedYaw <= 360 && reportedYaw >= 0) {
+            outYaw = reportedYaw;
         } else {
-            while(Math.abs(outYaw) > 360) {
-                outYaw -= sign * 360;
+            while (Math.abs(outYaw) > 360) {
+                while (outYaw >= 0) {
+                    outYaw -= 360;
+                }
+                while (outYaw < 0) {
+                    outYaw += 360;
+                }
+            }
+            if(Math.abs(outYaw) <= 360) {
+                if(outYaw < 0) {
+                    outYaw = 360 + outYaw;
+                }
             }
         }
-        return outYaw * sign;
+        return outYaw;
     }
 }
