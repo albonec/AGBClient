@@ -216,6 +216,7 @@ public class GameSettings
     public boolean isSpeedThreadOn = false;
     public double playerSpeed = 0;
     public double vertAngle = 0.0;
+    public double playerHeading = 0.0;
 
 
     /** Game settings language */
