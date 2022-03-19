@@ -2,6 +2,8 @@ package com.albonec.othercode.multithreading;
 
 import net.minecraft.client.Minecraft;
 
+import java.util.Arrays;
+
 public class TrajectoriesThread extends Thread {
     private Minecraft mc = Minecraft.getMinecraft();
 
@@ -10,6 +12,7 @@ public class TrajectoriesThread extends Thread {
         Thread.currentThread().setUncaughtExceptionHandler(new ExceptionHandler());
         while (!this.isInterrupted()) {
             mc.gameSettings.playerHeading = getActualYaw(mc.thePlayer.rotationYawHead);
+            System.out.println(Arrays.toString(FacingBlock(new double[]{mc.thePlayer.posX, mc.thePlayer.posY, mc.thePlayer.posZ}, getActualYaw(mc.thePlayer.rotationYawHead))));
         }
     }
 
@@ -33,5 +36,36 @@ public class TrajectoriesThread extends Thread {
             }
         }
         return outYaw;
+    }
+
+    private int[] FacingBlock(double[] playerCoordinates, double playerYaw) {
+        int[] blockCoordinate = new int[0];
+
+        if(playerYaw > 343.5 || playerYaw <= 22.5) {
+            return new int[]{(int) playerCoordinates[0], (int) playerCoordinates[1], (int) playerCoordinates[2] + 1};
+        }
+        if(playerYaw > 22.5 && playerYaw <= 67.5) {
+            return new int[]{(int) playerCoordinates[0] - 1, (int) playerCoordinates[1], (int) playerCoordinates[2] + 1};
+        }
+        if(playerYaw > 67.5 && playerYaw <= 112.5) {
+            return new int[]{(int) playerCoordinates[0] - 1, (int) playerCoordinates[1], (int) playerCoordinates[2]};
+        }
+        if(playerYaw > 112.5 && playerYaw <= 157.5) {
+            return new int[]{(int) playerCoordinates[0] - 1, (int) playerCoordinates[1], (int) playerCoordinates[2] - 1};
+        }
+        if(playerYaw > 157.5 && playerYaw <= 202.5) {
+            return new int[]{(int) playerCoordinates[0], (int) playerCoordinates[1], (int) playerCoordinates[2] - 1};
+        }
+        if(playerYaw > 202.5 && playerYaw <= 247.5) {
+            return new int[]{(int) playerCoordinates[0] + 1, (int) playerCoordinates[1], (int) playerCoordinates[2] - 1};
+        }
+        if(playerYaw > 247.5 && playerYaw <= 292.5) {
+            return new int[]{(int) playerCoordinates[0] + 1, (int) playerCoordinates[1], (int) playerCoordinates[2]};
+        }
+        if(playerYaw > 292.5 && playerYaw <= 343.5) {
+            return new int[]{(int) playerCoordinates[0] + 1, (int) playerCoordinates[1], (int) playerCoordinates[2] + 1};
+        }
+
+        return blockCoordinate;
     }
 }
