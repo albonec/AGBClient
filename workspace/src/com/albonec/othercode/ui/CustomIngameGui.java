@@ -25,7 +25,6 @@ public class CustomIngameGui extends GuiIngame {
     Runtime runtime = Runtime.getRuntime();
     CPSLeft cpsLeft = new CPSLeft();
     CPSRight cpsRight = new CPSRight();
-    CalcSpeedThread speed = new CalcSpeedThread();
 
     public CustomIngameGui(Minecraft mcIn) {
         super(mcIn);
@@ -40,13 +39,12 @@ public class CustomIngameGui extends GuiIngame {
             renderModules();
             renderKeyStrokes();
             renderCPS();
-            if(!mc.gameSettings.isSpeedThreadOn) {
+            if (!mc.gameSettings.isSpeedThreadOn) {
                 new CalcSpeedThread().start();
                 new TrajectoriesThread().start();
                 mc.gameSettings.isSpeedThreadOn = true;
             }
             renderMotion();
-            renderHeading();
         }
         //renderHP();
         renderArmor();
@@ -64,28 +62,28 @@ public class CustomIngameGui extends GuiIngame {
 
     private void renderMemory() {
         if (mc.gameSettings.doRenderMemory) {
-                ScaledResolution sr = new ScaledResolution(mc);
-                String mem = (ChatFormatting.AQUA + "RAM: " + ChatFormatting.WHITE + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + ChatFormatting.AQUA + " MB");
-                fonts.drawString(mem, sr.getScaledWidth() - fonts.getStringWidth(mem) - 2, 2, 0xffffff);
-            }
-            //System.out.println(("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length());
+            ScaledResolution sr = new ScaledResolution(mc);
+            String mem = (ChatFormatting.AQUA + "RAM: " + ChatFormatting.WHITE + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + ChatFormatting.AQUA + " MB");
+            fonts.drawString(mem, sr.getScaledWidth() - fonts.getStringWidth(mem) - 2, 2, 0xffffff);
         }
+        //System.out.println(("RAM: " + String.valueOf((runtime.totalMemory() - runtime.freeMemory()) / 1000000) + "/" + String.valueOf(runtime.totalMemory() / 1000000) + " MB").length());
+    }
 
     private void renderModules() {
-            fonts.drawString("Enabled Features", 2, 80, 0xffffff);
+        fonts.drawString("Enabled Features", 2, 80, 0xffffff);
 
-            ArrayList<Module> enabledModules = new ArrayList<Module>();
-            for (Module m : start.instance.moduleManager.getModules())
-                if (m.isToggled())
-                    enabledModules.add(m);
+        ArrayList<Module> enabledModules = new ArrayList<Module>();
+        for (Module m : start.instance.moduleManager.getModules())
+            if (m.isToggled())
+                enabledModules.add(m);
 
-            enabledModules.sort((m1, m2) -> fonts.getStringWidth(m2.getDisplayName()) - fonts.getStringWidth(m1.getDisplayName()));
+        enabledModules.sort((m1, m2) -> fonts.getStringWidth(m2.getDisplayName()) - fonts.getStringWidth(m1.getDisplayName()));
 
-            int y = 95;
-            for (Module m : enabledModules) {
-                fonts.drawString(ChatFormatting.AQUA + m.getDisplayName(), 2, y, 0xffffff);
-                y += 10;
-            }
+        int y = 95;
+        for (Module m : enabledModules) {
+            fonts.drawString(ChatFormatting.AQUA + m.getDisplayName(), 2, y, 0xffffff);
+            y += 10;
+        }
     }
 
     private void renderKeyStrokes() {
@@ -120,12 +118,12 @@ public class CustomIngameGui extends GuiIngame {
 
     public void renderCPS() {
         ScaledResolution sr = new ScaledResolution(mc);
-        final int Hoffset = (135/10);
+        final int Hoffset = (135 / 10);
         final int Voffset = 15;
-        fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (15/10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
+        fonts.drawString("CPS", sr.getScaledWidth() - fonts.getStringWidth("CPS") - (15 / 10) - Hoffset, sr.getScaledHeight() - 10 - Voffset, 0xffffff);
         cpsLeft.render(sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | " + cpsLeft.getCPS()) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
         cpsRight.render(sr.getScaledWidth() - fonts.getStringWidth(String.valueOf(cpsRight.getCPS())) - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
-        fonts.drawString(" | ",sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | ") - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
+        fonts.drawString(" | ", sr.getScaledWidth() - fonts.getStringWidth(cpsRight.getCPS() + " | ") - Hoffset, sr.getScaledHeight() - Voffset, 0xffffff);
     }
 
     private void renderHP() {
@@ -138,7 +136,7 @@ public class CustomIngameGui extends GuiIngame {
     }
 
     private void renderArmor() {
-        if(mc.gameSettings.doRenderArmor) {
+        if (mc.gameSettings.doRenderArmor) {
             ScaledResolution sr = new ScaledResolution(mc);
 
             if (mc.thePlayer.getCurrentArmor(0) != null) {
@@ -162,14 +160,10 @@ public class CustomIngameGui extends GuiIngame {
     private void renderMotion() {
         if (mc.gameSettings.doRenderMotion) {
             ScaledResolution sr = new ScaledResolution(mc);
+            DecimalFormat df = new DecimalFormat("0.0");
             fonts.drawString("Speed: " + this.mc.gameSettings.playerSpeed + " m/s", sr.getScaledWidth() - fonts.getStringWidth("Speed: " + this.mc.gameSettings.playerSpeed + " m/s") - 2, 50, 0xffffff);
+            fonts.drawString("Heading: " + df.format(this.mc.gameSettings.playerHeading), sr.getScaledWidth() - fonts.getStringWidth("Heading: " + df.format(this.mc.gameSettings.playerHeading)) - 2, 70, 0xffffff);
             fonts.drawString("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg", sr.getScaledWidth() - fonts.getStringWidth("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg") - 2, 60, 0xffffff);
         }
-    }
-
-    private void renderHeading() {
-        ScaledResolution sr = new ScaledResolution(mc);
-        DecimalFormat df = new DecimalFormat("0.0");
-        fonts.drawString("Heading: " + df.format(this.mc.gameSettings.playerHeading), sr.getScaledWidth() - fonts.getStringWidth("Heading: " + df.format(this.mc.gameSettings.playerHeading)) - 2, 70, 0xffffff);
     }
 }
