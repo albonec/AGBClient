@@ -2,7 +2,6 @@ package com.albonec.othercode.multithreading;
 
 import net.minecraft.client.Minecraft;
 
-import java.util.Arrays;
 
 public class TrajectoriesThread extends Thread {
     private Minecraft mc = Minecraft.getMinecraft();
@@ -12,7 +11,7 @@ public class TrajectoriesThread extends Thread {
         Thread.currentThread().setUncaughtExceptionHandler(new ExceptionHandler());
         while (!this.isInterrupted()) {
             mc.gameSettings.playerHeading = getActualYaw(mc.thePlayer.rotationYawHead);
-            System.out.println(Arrays.toString(FacingBlock(new double[]{mc.thePlayer.posX, mc.thePlayer.posY, mc.thePlayer.posZ}, getActualYaw(mc.thePlayer.rotationYawHead))));
+            mc.gameSettings.facingBlock = FacingBlock(new double[]{mc.thePlayer.posX, mc.thePlayer.posY, mc.thePlayer.posZ}, getActualYaw(mc.thePlayer.rotationYawHead));
         }
     }
 
@@ -68,4 +67,7 @@ public class TrajectoriesThread extends Thread {
 
         return blockCoordinate;
     }
+
+
+
 }

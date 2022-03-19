@@ -217,6 +217,7 @@ public class GameSettings
     public double playerSpeed = 0;
     public double vertAngle = 0.0;
     public double playerHeading = 0.0;
+    public int[] facingBlock;
 
 
     /** Game settings language */

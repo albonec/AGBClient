@@ -18,6 +18,7 @@ import org.lwjgl.input.Mouse;
 import java.awt.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CustomIngameGui extends GuiIngame {
     private Minecraft mc = Minecraft.getMinecraft();
@@ -164,6 +165,7 @@ public class CustomIngameGui extends GuiIngame {
             fonts.drawString("Speed: " + this.mc.gameSettings.playerSpeed + " m/s", sr.getScaledWidth() - fonts.getStringWidth("Speed: " + this.mc.gameSettings.playerSpeed + " m/s") - 2, 50, 0xffffff);
             fonts.drawString("Heading: " + df.format(this.mc.gameSettings.playerHeading), sr.getScaledWidth() - fonts.getStringWidth("Heading: " + df.format(this.mc.gameSettings.playerHeading)) - 2, 70, 0xffffff);
             fonts.drawString("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg", sr.getScaledWidth() - fonts.getStringWidth("Vertical Angle: " + this.mc.gameSettings.vertAngle + " deg") - 2, 60, 0xffffff);
+            fonts.drawString("Facing Block: " + Arrays.toString(mc.gameSettings.facingBlock), sr.getScaledWidth() - fonts.getStringWidth("Facing Block: " + Arrays.toString(mc.gameSettings.facingBlock)), 80, 0xffffff);
         }
     }
 }
