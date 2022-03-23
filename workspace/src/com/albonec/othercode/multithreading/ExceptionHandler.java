@@ -7,5 +7,8 @@ public class ExceptionHandler implements UncaughtExceptionHandler {
     public void uncaughtException(Thread t, Throwable e) {
         System.out.println("Caught Exception on Thread " + t.getId() + ", " + "Info: " + e.getClass().getName() + " " + e.getMessage() + ", StackTrace: " + e.getStackTrace() + ", Thread shutting down");
         t.interrupt();
+        if(t.isAlive()) {
+            t.stop();
+        }
     }
 }
