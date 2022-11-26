@@ -31,7 +31,7 @@ public class CalcSpeedThread extends Thread {
     }
 
     public double verticalAngleDisplacement(@NotNull double[] posChange) {
-        double angle = Math.atan(posChange[1] / Math.hypot(posChange[0], posChange[2])) * (180/Math.PI);
+        double angle = Math.atan2(posChange[1], Math.hypot(posChange[0], posChange[2])) * (180/Math.PI);
         if(Double.isNaN(angle)) {
             return 0.0;
         } else {
