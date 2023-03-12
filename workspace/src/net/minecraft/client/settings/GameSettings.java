@@ -200,6 +200,7 @@ public class GameSettings
     /** Booleans for added features enable/disable */
     public boolean doRenderKeystrokes = true;
     public boolean doZoom = true;
+    public boolean doRenderModules = true;
     public boolean doRenderCoordinates = true;
     public boolean doRenderMemory = true;
     public boolean debugBoundingBox = false;
@@ -213,6 +214,7 @@ public class GameSettings
     public boolean wasRenderMemory;
     public boolean wasRenderArmor;
     public boolean wasRenderMotion;
+    public boolean wasRenderModules = true;
     public boolean isSpeedThreadOn = false;
     public double playerSpeed = 0;
     public double vertAngle = 0.0;

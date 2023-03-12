@@ -39,7 +39,9 @@ public class CustomIngameGui extends GuiIngame {
             renderMemory();
             renderModules();
             renderKeyStrokes();
-            renderCPS();
+            if(mc.gameSettings.doRenderKeystrokes) {
+                renderCPS();
+            }
             if (!mc.gameSettings.isSpeedThreadOn) {
                 new CalcSpeedThread().start();
                 new TrajectoriesThread().start();
